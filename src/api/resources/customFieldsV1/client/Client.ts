@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace CustomFieldsV1Client {
     export type Options = BaseClientOptions;
@@ -49,19 +49,19 @@ export class CustomFieldsV1Client {
      */
     public list(
         requestOptions?: CustomFieldsV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CustomFieldsListResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.CustomFieldsListResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__list(requestOptions));
     }
 
     private async __list(
         requestOptions?: CustomFieldsV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CustomFieldsListResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CustomFieldsListResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/custom_fields",
             ),
             method: "GET",
@@ -74,11 +74,11 @@ export class CustomFieldsV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CustomFieldsListResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.CustomFieldsListResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -91,7 +91,7 @@ export class CustomFieldsV1Client {
     /**
      * Create a new custom field
      *
-     * @param {FernApi.CustomFieldsCreatePayloadV1} request
+     * @param {IncidentIO.CustomFieldsCreatePayloadV1} request
      * @param {CustomFieldsV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -108,22 +108,22 @@ export class CustomFieldsV1Client {
      *     })
      */
     public create(
-        request: FernApi.CustomFieldsCreatePayloadV1,
+        request: IncidentIO.CustomFieldsCreatePayloadV1,
         requestOptions?: CustomFieldsV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CustomFieldsCreateResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.CustomFieldsCreateResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__create(request, requestOptions));
     }
 
     private async __create(
-        request: FernApi.CustomFieldsCreatePayloadV1,
+        request: IncidentIO.CustomFieldsCreatePayloadV1,
         requestOptions?: CustomFieldsV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CustomFieldsCreateResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CustomFieldsCreateResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/custom_fields",
             ),
             method: "POST",
@@ -139,11 +139,14 @@ export class CustomFieldsV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CustomFieldsCreateResultV1, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.CustomFieldsCreateResultV1,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -156,7 +159,7 @@ export class CustomFieldsV1Client {
     /**
      * Get a single custom field.
      *
-     * @param {FernApi.CustomFieldsV1ShowRequest} request
+     * @param {IncidentIO.CustomFieldsV1ShowRequest} request
      * @param {CustomFieldsV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -165,23 +168,23 @@ export class CustomFieldsV1Client {
      *     })
      */
     public show(
-        request: FernApi.CustomFieldsV1ShowRequest,
+        request: IncidentIO.CustomFieldsV1ShowRequest,
         requestOptions?: CustomFieldsV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CustomFieldsShowResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.CustomFieldsShowResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.CustomFieldsV1ShowRequest,
+        request: IncidentIO.CustomFieldsV1ShowRequest,
         requestOptions?: CustomFieldsV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CustomFieldsShowResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CustomFieldsShowResultV1>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/custom_fields/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -194,11 +197,11 @@ export class CustomFieldsV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CustomFieldsShowResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.CustomFieldsShowResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -211,7 +214,7 @@ export class CustomFieldsV1Client {
     /**
      * Update the details of a custom field
      *
-     * @param {FernApi.CustomFieldsUpdatePayloadV1} request
+     * @param {IncidentIO.CustomFieldsUpdatePayloadV1} request
      * @param {CustomFieldsV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -228,23 +231,23 @@ export class CustomFieldsV1Client {
      *     })
      */
     public update(
-        request: FernApi.CustomFieldsUpdatePayloadV1,
+        request: IncidentIO.CustomFieldsUpdatePayloadV1,
         requestOptions?: CustomFieldsV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CustomFieldsUpdateResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.CustomFieldsUpdateResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__update(request, requestOptions));
     }
 
     private async __update(
-        request: FernApi.CustomFieldsUpdatePayloadV1,
+        request: IncidentIO.CustomFieldsUpdatePayloadV1,
         requestOptions?: CustomFieldsV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CustomFieldsUpdateResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CustomFieldsUpdateResultV1>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/custom_fields/${core.url.encodePathParam(id)}`,
             ),
             method: "PUT",
@@ -260,11 +263,14 @@ export class CustomFieldsV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CustomFieldsUpdateResultV1, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.CustomFieldsUpdateResultV1,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -277,7 +283,7 @@ export class CustomFieldsV1Client {
     /**
      * Delete a custom field
      *
-     * @param {FernApi.CustomFieldsV1DeleteRequest} request
+     * @param {IncidentIO.CustomFieldsV1DeleteRequest} request
      * @param {CustomFieldsV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -286,14 +292,14 @@ export class CustomFieldsV1Client {
      *     })
      */
     public delete(
-        request: FernApi.CustomFieldsV1DeleteRequest,
+        request: IncidentIO.CustomFieldsV1DeleteRequest,
         requestOptions?: CustomFieldsV1Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__delete(request, requestOptions));
     }
 
     private async __delete(
-        request: FernApi.CustomFieldsV1DeleteRequest,
+        request: IncidentIO.CustomFieldsV1DeleteRequest,
         requestOptions?: CustomFieldsV1Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -302,7 +308,7 @@ export class CustomFieldsV1Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/custom_fields/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -319,7 +325,7 @@ export class CustomFieldsV1Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

@@ -35,14 +35,14 @@ import { WorkflowsV2Client } from "./api/resources/workflowsV2/client/Client.js"
 import type { BaseClientOptions, BaseRequestOptions } from "./BaseClient.js";
 import { type NormalizedClientOptions, normalizeClientOptions } from "./BaseClient.js";
 
-export declare namespace FernApiClient {
+export declare namespace IncidentIOClient {
     export type Options = BaseClientOptions;
 
     export interface RequestOptions extends BaseRequestOptions {}
 }
 
-export class FernApiClient {
-    protected readonly _options: NormalizedClientOptions<FernApiClient.Options>;
+export class IncidentIOClient {
+    protected readonly _options: NormalizedClientOptions<IncidentIOClient.Options>;
     protected _actionsV1: ActionsV1Client | undefined;
     protected _customFieldOptionsV1: CustomFieldOptionsV1Client | undefined;
     protected _customFieldsV1: CustomFieldsV1Client | undefined;
@@ -76,7 +76,7 @@ export class FernApiClient {
     protected _workflowsV2: WorkflowsV2Client | undefined;
     protected _catalogV3: CatalogV3Client | undefined;
 
-    constructor(options: FernApiClient.Options = {}) {
+    constructor(options: IncidentIOClient.Options = {}) {
         this._options = normalizeClientOptions(options);
     }
 

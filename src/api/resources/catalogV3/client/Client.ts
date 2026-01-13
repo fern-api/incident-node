@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace CatalogV3Client {
     export type Options = BaseClientOptions;
@@ -48,7 +48,7 @@ export class CatalogV3Client {
     /**
      * List entries for a catalog type.
      *
-     * @param {FernApi.CatalogV3ListEntriesRequest} request
+     * @param {IncidentIO.CatalogV3ListEntriesRequest} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -60,16 +60,16 @@ export class CatalogV3Client {
      *     })
      */
     public listentries(
-        request: FernApi.CatalogV3ListEntriesRequest,
+        request: IncidentIO.CatalogV3ListEntriesRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogListEntriesResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogListEntriesResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__listentries(request, requestOptions));
     }
 
     private async __listentries(
-        request: FernApi.CatalogV3ListEntriesRequest,
+        request: IncidentIO.CatalogV3ListEntriesRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogListEntriesResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogListEntriesResultV3>> {
         const { catalog_type_id: catalogTypeId, page_size: pageSize, after, identifier } = request;
         const _queryParams: Record<string, unknown> = {
             catalog_type_id: catalogTypeId,
@@ -82,7 +82,7 @@ export class CatalogV3Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v3/catalog_entries",
             ),
             method: "GET",
@@ -95,11 +95,14 @@ export class CatalogV3Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CatalogListEntriesResultV3, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.CatalogListEntriesResultV3,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -114,7 +117,7 @@ export class CatalogV3Client {
      *
      * If you call this API with a payload where the external_id and catalog_type_id match an existing entry, the existing entry will be updated.
      *
-     * @param {FernApi.CatalogCreateEntryPayloadV3} request
+     * @param {IncidentIO.CatalogCreateEntryPayloadV3} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -137,22 +140,22 @@ export class CatalogV3Client {
      *     })
      */
     public createentry(
-        request: FernApi.CatalogCreateEntryPayloadV3,
+        request: IncidentIO.CatalogCreateEntryPayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogCreateEntryResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogCreateEntryResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__createentry(request, requestOptions));
     }
 
     private async __createentry(
-        request: FernApi.CatalogCreateEntryPayloadV3,
+        request: IncidentIO.CatalogCreateEntryPayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogCreateEntryResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogCreateEntryResultV3>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v3/catalog_entries",
             ),
             method: "POST",
@@ -168,11 +171,14 @@ export class CatalogV3Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CatalogCreateEntryResultV3, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.CatalogCreateEntryResultV3,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -185,7 +191,7 @@ export class CatalogV3Client {
     /**
      * Update multiple catalog entries in a single operation. You can update up to 250 entries at once. This operation is atomic - either all entries are updated successfully, or none are updated.
      *
-     * @param {FernApi.CatalogBulkUpdateEntriesPayloadV3} request
+     * @param {IncidentIO.CatalogBulkUpdateEntriesPayloadV3} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -228,14 +234,14 @@ export class CatalogV3Client {
      *     })
      */
     public bulkupdateentries(
-        request: FernApi.CatalogBulkUpdateEntriesPayloadV3,
+        request: IncidentIO.CatalogBulkUpdateEntriesPayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__bulkupdateentries(request, requestOptions));
     }
 
     private async __bulkupdateentries(
-        request: FernApi.CatalogBulkUpdateEntriesPayloadV3,
+        request: IncidentIO.CatalogBulkUpdateEntriesPayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
@@ -243,7 +249,7 @@ export class CatalogV3Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v3/catalog_entries/actions/bulk_update",
             ),
             method: "POST",
@@ -263,7 +269,7 @@ export class CatalogV3Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -281,7 +287,7 @@ export class CatalogV3Client {
     /**
      * Show a single catalog entry.
      *
-     * @param {FernApi.CatalogV3ShowEntryRequest} request
+     * @param {IncidentIO.CatalogV3ShowEntryRequest} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -290,23 +296,23 @@ export class CatalogV3Client {
      *     })
      */
     public showentry(
-        request: FernApi.CatalogV3ShowEntryRequest,
+        request: IncidentIO.CatalogV3ShowEntryRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogShowEntryResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogShowEntryResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__showentry(request, requestOptions));
     }
 
     private async __showentry(
-        request: FernApi.CatalogV3ShowEntryRequest,
+        request: IncidentIO.CatalogV3ShowEntryRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogShowEntryResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogShowEntryResultV3>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v3/catalog_entries/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -319,11 +325,11 @@ export class CatalogV3Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CatalogShowEntryResultV3, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.CatalogShowEntryResultV3, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -336,7 +342,7 @@ export class CatalogV3Client {
     /**
      * Updates an existing catalog entry.
      *
-     * @param {FernApi.CatalogUpdateEntryPayloadV3} request
+     * @param {IncidentIO.CatalogUpdateEntryPayloadV3} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -360,23 +366,23 @@ export class CatalogV3Client {
      *     })
      */
     public updateentry(
-        request: FernApi.CatalogUpdateEntryPayloadV3,
+        request: IncidentIO.CatalogUpdateEntryPayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogUpdateEntryResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogUpdateEntryResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__updateentry(request, requestOptions));
     }
 
     private async __updateentry(
-        request: FernApi.CatalogUpdateEntryPayloadV3,
+        request: IncidentIO.CatalogUpdateEntryPayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogUpdateEntryResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogUpdateEntryResultV3>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v3/catalog_entries/${core.url.encodePathParam(id)}`,
             ),
             method: "PUT",
@@ -392,11 +398,14 @@ export class CatalogV3Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CatalogUpdateEntryResultV3, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.CatalogUpdateEntryResultV3,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -409,7 +418,7 @@ export class CatalogV3Client {
     /**
      * Archives a catalog entry.
      *
-     * @param {FernApi.CatalogV3DestroyEntryRequest} request
+     * @param {IncidentIO.CatalogV3DestroyEntryRequest} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -418,14 +427,14 @@ export class CatalogV3Client {
      *     })
      */
     public destroyentry(
-        request: FernApi.CatalogV3DestroyEntryRequest,
+        request: IncidentIO.CatalogV3DestroyEntryRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__destroyentry(request, requestOptions));
     }
 
     private async __destroyentry(
-        request: FernApi.CatalogV3DestroyEntryRequest,
+        request: IncidentIO.CatalogV3DestroyEntryRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -434,7 +443,7 @@ export class CatalogV3Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v3/catalog_entries/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -451,7 +460,7 @@ export class CatalogV3Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -475,19 +484,19 @@ export class CatalogV3Client {
      */
     public listresources(
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogListResourcesResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogListResourcesResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__listresources(requestOptions));
     }
 
     private async __listresources(
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogListResourcesResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogListResourcesResultV3>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v3/catalog_resources",
             ),
             method: "GET",
@@ -500,11 +509,14 @@ export class CatalogV3Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CatalogListResourcesResultV3, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.CatalogListResourcesResultV3,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -524,19 +536,19 @@ export class CatalogV3Client {
      */
     public listtypes(
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogListTypesResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogListTypesResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__listtypes(requestOptions));
     }
 
     private async __listtypes(
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogListTypesResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogListTypesResultV3>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v3/catalog_types",
             ),
             method: "GET",
@@ -549,11 +561,11 @@ export class CatalogV3Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CatalogListTypesResultV3, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.CatalogListTypesResultV3, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -566,7 +578,7 @@ export class CatalogV3Client {
     /**
      * Create a catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
      *
-     * @param {FernApi.CatalogCreateTypePayloadV3} request
+     * @param {IncidentIO.CatalogCreateTypePayloadV3} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -586,22 +598,22 @@ export class CatalogV3Client {
      *     })
      */
     public createtype(
-        request: FernApi.CatalogCreateTypePayloadV3,
+        request: IncidentIO.CatalogCreateTypePayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogCreateTypeResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogCreateTypeResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__createtype(request, requestOptions));
     }
 
     private async __createtype(
-        request: FernApi.CatalogCreateTypePayloadV3,
+        request: IncidentIO.CatalogCreateTypePayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogCreateTypeResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogCreateTypeResultV3>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v3/catalog_types",
             ),
             method: "POST",
@@ -617,11 +629,11 @@ export class CatalogV3Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CatalogCreateTypeResultV3, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.CatalogCreateTypeResultV3, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -634,7 +646,7 @@ export class CatalogV3Client {
     /**
      * Show a single catalog type.
      *
-     * @param {FernApi.CatalogV3ShowTypeRequest} request
+     * @param {IncidentIO.CatalogV3ShowTypeRequest} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -643,23 +655,23 @@ export class CatalogV3Client {
      *     })
      */
     public showtype(
-        request: FernApi.CatalogV3ShowTypeRequest,
+        request: IncidentIO.CatalogV3ShowTypeRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogShowTypeResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogShowTypeResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__showtype(request, requestOptions));
     }
 
     private async __showtype(
-        request: FernApi.CatalogV3ShowTypeRequest,
+        request: IncidentIO.CatalogV3ShowTypeRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogShowTypeResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogShowTypeResultV3>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v3/catalog_types/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -672,11 +684,11 @@ export class CatalogV3Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CatalogShowTypeResultV3, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.CatalogShowTypeResultV3, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -689,7 +701,7 @@ export class CatalogV3Client {
     /**
      * Updates an existing catalog type. The schema must be updated using the UpdateTypeSchema endpoint.
      *
-     * @param {FernApi.CatalogUpdateTypePayloadV3} request
+     * @param {IncidentIO.CatalogUpdateTypePayloadV3} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -709,23 +721,23 @@ export class CatalogV3Client {
      *     })
      */
     public updatetype(
-        request: FernApi.CatalogUpdateTypePayloadV3,
+        request: IncidentIO.CatalogUpdateTypePayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogUpdateTypeResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogUpdateTypeResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__updatetype(request, requestOptions));
     }
 
     private async __updatetype(
-        request: FernApi.CatalogUpdateTypePayloadV3,
+        request: IncidentIO.CatalogUpdateTypePayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogUpdateTypeResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogUpdateTypeResultV3>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v3/catalog_types/${core.url.encodePathParam(id)}`,
             ),
             method: "PUT",
@@ -741,11 +753,11 @@ export class CatalogV3Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.CatalogUpdateTypeResultV3, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.CatalogUpdateTypeResultV3, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -758,7 +770,7 @@ export class CatalogV3Client {
     /**
      * Archives a catalog type and associated entries.
      *
-     * @param {FernApi.CatalogV3DestroyTypeRequest} request
+     * @param {IncidentIO.CatalogV3DestroyTypeRequest} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -767,14 +779,14 @@ export class CatalogV3Client {
      *     })
      */
     public destroytype(
-        request: FernApi.CatalogV3DestroyTypeRequest,
+        request: IncidentIO.CatalogV3DestroyTypeRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__destroytype(request, requestOptions));
     }
 
     private async __destroytype(
-        request: FernApi.CatalogV3DestroyTypeRequest,
+        request: IncidentIO.CatalogV3DestroyTypeRequest,
         requestOptions?: CatalogV3Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -783,7 +795,7 @@ export class CatalogV3Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v3/catalog_types/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -800,7 +812,7 @@ export class CatalogV3Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -820,7 +832,7 @@ export class CatalogV3Client {
      * By allowing the creation of types without a schema, they can be created in any order, but it
      * means that you need to make a separate call to this endpoint to update the schema.
      *
-     * @param {FernApi.CatalogUpdateTypeSchemaPayloadV3} request
+     * @param {IncidentIO.CatalogUpdateTypeSchemaPayloadV3} request
      * @param {CatalogV3Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -841,23 +853,23 @@ export class CatalogV3Client {
      *     })
      */
     public updatetypeschema(
-        request: FernApi.CatalogUpdateTypeSchemaPayloadV3,
+        request: IncidentIO.CatalogUpdateTypeSchemaPayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.CatalogUpdateTypeSchemaResultV3> {
+    ): core.HttpResponsePromise<IncidentIO.CatalogUpdateTypeSchemaResultV3> {
         return core.HttpResponsePromise.fromPromise(this.__updatetypeschema(request, requestOptions));
     }
 
     private async __updatetypeschema(
-        request: FernApi.CatalogUpdateTypeSchemaPayloadV3,
+        request: IncidentIO.CatalogUpdateTypeSchemaPayloadV3,
         requestOptions?: CatalogV3Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.CatalogUpdateTypeSchemaResultV3>> {
+    ): Promise<core.WithRawResponse<IncidentIO.CatalogUpdateTypeSchemaResultV3>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v3/catalog_types/${core.url.encodePathParam(id)}/actions/update_schema`,
             ),
             method: "POST",
@@ -874,13 +886,13 @@ export class CatalogV3Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.CatalogUpdateTypeSchemaResultV3,
+                data: _response.body as IncidentIO.CatalogUpdateTypeSchemaResultV3,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

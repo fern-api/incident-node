@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace StatusPagesV1Client {
     export type Options = BaseClientOptions;
@@ -28,7 +28,7 @@ export class StatusPagesV1Client {
     /**
      * List the linked Response incidents for a status page incident.
      *
-     * @param {FernApi.StatusPagesV1ListResponseIncidentsRequest} request
+     * @param {IncidentIO.StatusPagesV1ListResponseIncidentsRequest} request
      * @param {StatusPagesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -38,23 +38,23 @@ export class StatusPagesV1Client {
      *     })
      */
     public listresponseincidents(
-        request: FernApi.StatusPagesV1ListResponseIncidentsRequest,
+        request: IncidentIO.StatusPagesV1ListResponseIncidentsRequest,
         requestOptions?: StatusPagesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.StatusPagesListResponseIncidentsResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.StatusPagesListResponseIncidentsResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__listresponseincidents(request, requestOptions));
     }
 
     private async __listresponseincidents(
-        request: FernApi.StatusPagesV1ListResponseIncidentsRequest,
+        request: IncidentIO.StatusPagesV1ListResponseIncidentsRequest,
         requestOptions?: StatusPagesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.StatusPagesListResponseIncidentsResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.StatusPagesListResponseIncidentsResultV1>> {
         const { id, incident_id: incidentId } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/status-pages/${core.url.encodePathParam(id)}/incidents/${core.url.encodePathParam(incidentId)}/response-incidents`,
             ),
             method: "GET",
@@ -68,13 +68,13 @@ export class StatusPagesV1Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.StatusPagesListResponseIncidentsResultV1,
+                data: _response.body as IncidentIO.StatusPagesListResponseIncidentsResultV1,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

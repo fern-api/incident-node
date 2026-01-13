@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace AlertSourcesV2Client {
     export type Options = BaseClientOptions;
@@ -37,19 +37,19 @@ export class AlertSourcesV2Client {
      */
     public list(
         requestOptions?: AlertSourcesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.AlertSourcesListResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.AlertSourcesListResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__list(requestOptions));
     }
 
     private async __list(
         requestOptions?: AlertSourcesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.AlertSourcesListResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.AlertSourcesListResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/alert_sources",
             ),
             method: "GET",
@@ -62,11 +62,11 @@ export class AlertSourcesV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.AlertSourcesListResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.AlertSourcesListResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -79,7 +79,7 @@ export class AlertSourcesV2Client {
     /**
      * Create a new alert source in your account.
      *
-     * @param {FernApi.AlertSourcesCreatePayloadV2} request
+     * @param {IncidentIO.AlertSourcesCreatePayloadV2} request
      * @param {AlertSourcesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -216,22 +216,22 @@ export class AlertSourcesV2Client {
      *     })
      */
     public create(
-        request: FernApi.AlertSourcesCreatePayloadV2,
+        request: IncidentIO.AlertSourcesCreatePayloadV2,
         requestOptions?: AlertSourcesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.AlertSourcesCreateResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.AlertSourcesCreateResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__create(request, requestOptions));
     }
 
     private async __create(
-        request: FernApi.AlertSourcesCreatePayloadV2,
+        request: IncidentIO.AlertSourcesCreatePayloadV2,
         requestOptions?: AlertSourcesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.AlertSourcesCreateResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.AlertSourcesCreateResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/alert_sources",
             ),
             method: "POST",
@@ -247,11 +247,14 @@ export class AlertSourcesV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.AlertSourcesCreateResultV2, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.AlertSourcesCreateResultV2,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -264,7 +267,7 @@ export class AlertSourcesV2Client {
     /**
      * Load details about a specific alert source in your account.
      *
-     * @param {FernApi.AlertSourcesV2ShowRequest} request
+     * @param {IncidentIO.AlertSourcesV2ShowRequest} request
      * @param {AlertSourcesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -273,23 +276,23 @@ export class AlertSourcesV2Client {
      *     })
      */
     public show(
-        request: FernApi.AlertSourcesV2ShowRequest,
+        request: IncidentIO.AlertSourcesV2ShowRequest,
         requestOptions?: AlertSourcesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.AlertSourcesShowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.AlertSourcesShowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.AlertSourcesV2ShowRequest,
+        request: IncidentIO.AlertSourcesV2ShowRequest,
         requestOptions?: AlertSourcesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.AlertSourcesShowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.AlertSourcesShowResultV2>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/alert_sources/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -302,11 +305,11 @@ export class AlertSourcesV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.AlertSourcesShowResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.AlertSourcesShowResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -319,7 +322,7 @@ export class AlertSourcesV2Client {
     /**
      * Update an existing alert source in your account.
      *
-     * @param {FernApi.AlertSourcesUpdatePayloadV2} request
+     * @param {IncidentIO.AlertSourcesUpdatePayloadV2} request
      * @param {AlertSourcesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -456,23 +459,23 @@ export class AlertSourcesV2Client {
      *     })
      */
     public update(
-        request: FernApi.AlertSourcesUpdatePayloadV2,
+        request: IncidentIO.AlertSourcesUpdatePayloadV2,
         requestOptions?: AlertSourcesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.AlertSourcesUpdateResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.AlertSourcesUpdateResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__update(request, requestOptions));
     }
 
     private async __update(
-        request: FernApi.AlertSourcesUpdatePayloadV2,
+        request: IncidentIO.AlertSourcesUpdatePayloadV2,
         requestOptions?: AlertSourcesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.AlertSourcesUpdateResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.AlertSourcesUpdateResultV2>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/alert_sources/${core.url.encodePathParam(id)}`,
             ),
             method: "PUT",
@@ -488,11 +491,14 @@ export class AlertSourcesV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.AlertSourcesUpdateResultV2, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.AlertSourcesUpdateResultV2,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -505,7 +511,7 @@ export class AlertSourcesV2Client {
     /**
      * Delete an existing alert source in your account.
      *
-     * @param {FernApi.AlertSourcesV2DeleteRequest} request
+     * @param {IncidentIO.AlertSourcesV2DeleteRequest} request
      * @param {AlertSourcesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -514,14 +520,14 @@ export class AlertSourcesV2Client {
      *     })
      */
     public delete(
-        request: FernApi.AlertSourcesV2DeleteRequest,
+        request: IncidentIO.AlertSourcesV2DeleteRequest,
         requestOptions?: AlertSourcesV2Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__delete(request, requestOptions));
     }
 
     private async __delete(
-        request: FernApi.AlertSourcesV2DeleteRequest,
+        request: IncidentIO.AlertSourcesV2DeleteRequest,
         requestOptions?: AlertSourcesV2Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -530,7 +536,7 @@ export class AlertSourcesV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/alert_sources/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -547,7 +553,7 @@ export class AlertSourcesV2Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

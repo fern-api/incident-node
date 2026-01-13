@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace FollowUpsV2Client {
     export type Options = BaseClientOptions;
@@ -35,7 +35,7 @@ export class FollowUpsV2Client {
     /**
      * List all follow-ups for an organisation.
      *
-     * @param {FernApi.FollowUpsV2ListRequest} request
+     * @param {IncidentIO.FollowUpsV2ListRequest} request
      * @param {FollowUpsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -44,16 +44,16 @@ export class FollowUpsV2Client {
      *     })
      */
     public list(
-        request: FernApi.FollowUpsV2ListRequest = {},
+        request: IncidentIO.FollowUpsV2ListRequest = {},
         requestOptions?: FollowUpsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.FollowUpsListResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.FollowUpsListResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__list(request, requestOptions));
     }
 
     private async __list(
-        request: FernApi.FollowUpsV2ListRequest = {},
+        request: IncidentIO.FollowUpsV2ListRequest = {},
         requestOptions?: FollowUpsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.FollowUpsListResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.FollowUpsListResultV2>> {
         const { incident_id: incidentId, incident_mode: incidentMode } = request;
         const _queryParams: Record<string, unknown> = {
             incident_id: incidentId,
@@ -64,7 +64,7 @@ export class FollowUpsV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/follow_ups",
             ),
             method: "GET",
@@ -77,11 +77,11 @@ export class FollowUpsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.FollowUpsListResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.FollowUpsListResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -94,7 +94,7 @@ export class FollowUpsV2Client {
     /**
      * Get a single incident follow-up.
      *
-     * @param {FernApi.FollowUpsV2ShowRequest} request
+     * @param {IncidentIO.FollowUpsV2ShowRequest} request
      * @param {FollowUpsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -103,23 +103,23 @@ export class FollowUpsV2Client {
      *     })
      */
     public show(
-        request: FernApi.FollowUpsV2ShowRequest,
+        request: IncidentIO.FollowUpsV2ShowRequest,
         requestOptions?: FollowUpsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.FollowUpsShowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.FollowUpsShowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.FollowUpsV2ShowRequest,
+        request: IncidentIO.FollowUpsV2ShowRequest,
         requestOptions?: FollowUpsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.FollowUpsShowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.FollowUpsShowResultV2>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/follow_ups/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -132,11 +132,11 @@ export class FollowUpsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.FollowUpsShowResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.FollowUpsShowResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

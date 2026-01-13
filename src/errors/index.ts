@@ -1,2 +1,2 @@
-export { FernApiError } from "./FernApiError.js";
-export { FernApiTimeoutError } from "./FernApiTimeoutError.js";
+export { IncidentIOError } from "./IncidentIOError.js";
+export { IncidentIOTimeoutError } from "./IncidentIOTimeoutError.js";

@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace WorkflowsV2Client {
     export type Options = BaseClientOptions;
@@ -37,19 +37,19 @@ export class WorkflowsV2Client {
      */
     public listworkflows(
         requestOptions?: WorkflowsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.WorkflowsListWorkflowsResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.WorkflowsListWorkflowsResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__listworkflows(requestOptions));
     }
 
     private async __listworkflows(
         requestOptions?: WorkflowsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.WorkflowsListWorkflowsResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.WorkflowsListWorkflowsResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/workflows",
             ),
             method: "GET",
@@ -63,13 +63,13 @@ export class WorkflowsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.WorkflowsListWorkflowsResultV2,
+                data: _response.body as IncidentIO.WorkflowsListWorkflowsResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -82,7 +82,7 @@ export class WorkflowsV2Client {
     /**
      * Create a new workflow
      *
-     * @param {FernApi.WorkflowsCreateWorkflowPayloadV2} request
+     * @param {IncidentIO.WorkflowsCreateWorkflowPayloadV2} request
      * @param {WorkflowsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -224,22 +224,22 @@ export class WorkflowsV2Client {
      *     })
      */
     public createworkflow(
-        request: FernApi.WorkflowsCreateWorkflowPayloadV2,
+        request: IncidentIO.WorkflowsCreateWorkflowPayloadV2,
         requestOptions?: WorkflowsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.WorkflowsCreateWorkflowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.WorkflowsCreateWorkflowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__createworkflow(request, requestOptions));
     }
 
     private async __createworkflow(
-        request: FernApi.WorkflowsCreateWorkflowPayloadV2,
+        request: IncidentIO.WorkflowsCreateWorkflowPayloadV2,
         requestOptions?: WorkflowsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.WorkflowsCreateWorkflowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.WorkflowsCreateWorkflowResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/workflows",
             ),
             method: "POST",
@@ -256,13 +256,13 @@ export class WorkflowsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.WorkflowsCreateWorkflowResultV2,
+                data: _response.body as IncidentIO.WorkflowsCreateWorkflowResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -275,7 +275,7 @@ export class WorkflowsV2Client {
     /**
      * Show a workflow by ID
      *
-     * @param {FernApi.WorkflowsV2ShowWorkflowRequest} request
+     * @param {IncidentIO.WorkflowsV2ShowWorkflowRequest} request
      * @param {WorkflowsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -285,16 +285,16 @@ export class WorkflowsV2Client {
      *     })
      */
     public showworkflow(
-        request: FernApi.WorkflowsV2ShowWorkflowRequest,
+        request: IncidentIO.WorkflowsV2ShowWorkflowRequest,
         requestOptions?: WorkflowsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.WorkflowsShowWorkflowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.WorkflowsShowWorkflowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__showworkflow(request, requestOptions));
     }
 
     private async __showworkflow(
-        request: FernApi.WorkflowsV2ShowWorkflowRequest,
+        request: IncidentIO.WorkflowsV2ShowWorkflowRequest,
         requestOptions?: WorkflowsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.WorkflowsShowWorkflowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.WorkflowsShowWorkflowResultV2>> {
         const { id, skip_step_upgrades: skipStepUpgrades } = request;
         const _queryParams: Record<string, unknown> = {
             skip_step_upgrades: skipStepUpgrades,
@@ -304,7 +304,7 @@ export class WorkflowsV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/workflows/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -318,13 +318,13 @@ export class WorkflowsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.WorkflowsShowWorkflowResultV2,
+                data: _response.body as IncidentIO.WorkflowsShowWorkflowResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -337,7 +337,7 @@ export class WorkflowsV2Client {
     /**
      * Updates a workflow
      *
-     * @param {FernApi.WorkflowsUpdateWorkflowPayloadV2} request
+     * @param {IncidentIO.WorkflowsUpdateWorkflowPayloadV2} request
      * @param {WorkflowsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -479,23 +479,23 @@ export class WorkflowsV2Client {
      *     })
      */
     public updateworkflow(
-        request: FernApi.WorkflowsUpdateWorkflowPayloadV2,
+        request: IncidentIO.WorkflowsUpdateWorkflowPayloadV2,
         requestOptions?: WorkflowsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.WorkflowsUpdateWorkflowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.WorkflowsUpdateWorkflowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__updateworkflow(request, requestOptions));
     }
 
     private async __updateworkflow(
-        request: FernApi.WorkflowsUpdateWorkflowPayloadV2,
+        request: IncidentIO.WorkflowsUpdateWorkflowPayloadV2,
         requestOptions?: WorkflowsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.WorkflowsUpdateWorkflowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.WorkflowsUpdateWorkflowResultV2>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/workflows/${core.url.encodePathParam(id)}`,
             ),
             method: "PUT",
@@ -512,13 +512,13 @@ export class WorkflowsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.WorkflowsUpdateWorkflowResultV2,
+                data: _response.body as IncidentIO.WorkflowsUpdateWorkflowResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -531,7 +531,7 @@ export class WorkflowsV2Client {
     /**
      * Archives a workflow
      *
-     * @param {FernApi.WorkflowsV2DestroyWorkflowRequest} request
+     * @param {IncidentIO.WorkflowsV2DestroyWorkflowRequest} request
      * @param {WorkflowsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -540,14 +540,14 @@ export class WorkflowsV2Client {
      *     })
      */
     public destroyworkflow(
-        request: FernApi.WorkflowsV2DestroyWorkflowRequest,
+        request: IncidentIO.WorkflowsV2DestroyWorkflowRequest,
         requestOptions?: WorkflowsV2Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__destroyworkflow(request, requestOptions));
     }
 
     private async __destroyworkflow(
-        request: FernApi.WorkflowsV2DestroyWorkflowRequest,
+        request: IncidentIO.WorkflowsV2DestroyWorkflowRequest,
         requestOptions?: WorkflowsV2Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -556,7 +556,7 @@ export class WorkflowsV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/workflows/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -573,7 +573,7 @@ export class WorkflowsV2Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

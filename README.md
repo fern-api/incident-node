@@ -39,9 +39,9 @@ A full reference for this library is available [here](https://github.com/fern-ap
 Instantiate and use the client with the following:
 
 ```typescript
-import { FernApiClient } from "@fern-api/incidentio";
+import { IncidentIOClient } from "@fern-api/incidentio";
 
-const client = new FernApiClient;
+const client = new IncidentIOClient;
 await client.customFieldOptionsV1.create({
     custom_field_id: "01FCNDV6P870EA6S7TK1DSYDG0",
     sort_key: 10,
@@ -55,9 +55,9 @@ The SDK exports all request and response types as TypeScript interfaces. Simply 
 following namespace:
 
 ```typescript
-import { FernApi } from "@fern-api/incidentio";
+import { IncidentIO } from "@fern-api/incidentio";
 
-const request: FernApi.ActionsV1ListRequest = {
+const request: IncidentIO.ActionsV1ListRequest = {
     ...
 };
 ```
@@ -68,12 +68,12 @@ When the API returns a non-success status code (4xx or 5xx response), a subclass
 will be thrown.
 
 ```typescript
-import { FernApiError } from "@fern-api/incidentio";
+import { IncidentIOError } from "@fern-api/incidentio";
 
 try {
     await client.customFieldOptionsV1.create(...);
 } catch (err) {
-    if (err instanceof FernApiError) {
+    if (err instanceof IncidentIOError) {
         console.log(err.statusCode);
         console.log(err.message);
         console.log(err.body);
@@ -478,9 +478,9 @@ const text = new TextDecoder().decode(bytes);
 If you would like to send additional headers as part of the request, use the `headers` request option.
 
 ```typescript
-import { FernApiClient } from "@fern-api/incidentio";
+import { IncidentIOClient } from "@fern-api/incidentio";
 
-const client = new FernApiClient({
+const client = new IncidentIOClient({
     ...
     headers: {
         'X-Custom-Header': 'custom value'
@@ -565,9 +565,9 @@ console.log(rawResponse.headers['X-My-Header']);
 The SDK supports logging. You can configure the logger by passing in a `logging` object to the client options.
 
 ```typescript
-import { FernApiClient, logging } from "@fern-api/incidentio";
+import { IncidentIOClient, logging } from "@fern-api/incidentio";
 
-const client = new FernApiClient({
+const client = new IncidentIOClient({
     ...
     logging: {
         level: logging.LogLevel.Debug, // defaults to logging.LogLevel.Info
@@ -643,9 +643,9 @@ The SDK provides a way for you to customize the underlying HTTP client / Fetch f
 unsupported environment, this provides a way for you to break glass and ensure the SDK works.
 
 ```typescript
-import { FernApiClient } from "@fern-api/incidentio";
+import { IncidentIOClient } from "@fern-api/incidentio";
 
-const client = new FernApiClient({
+const client = new IncidentIOClient({
     ...
     fetcher: // provide your implementation here
 });

@@ -8,7 +8,7 @@ import { toJson } from "../../../../core/json.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace EscalationsV2Client {
     export type Options = BaseClientOptions;
@@ -39,7 +39,7 @@ export class EscalationsV2Client {
      * We recommend you create escalation paths in the incident.io dashboard where our path
      * builder makes it easy to use conditions and visualise the path.
      *
-     * @param {FernApi.EscalationsCreatePathPayloadV2} request
+     * @param {IncidentIO.EscalationsCreatePathPayloadV2} request
      * @param {EscalationsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -112,22 +112,22 @@ export class EscalationsV2Client {
      *     })
      */
     public createpath(
-        request: FernApi.EscalationsCreatePathPayloadV2,
+        request: IncidentIO.EscalationsCreatePathPayloadV2,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.EscalationsCreatePathResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.EscalationsCreatePathResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__createpath(request, requestOptions));
     }
 
     private async __createpath(
-        request: FernApi.EscalationsCreatePathPayloadV2,
+        request: IncidentIO.EscalationsCreatePathPayloadV2,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.EscalationsCreatePathResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.EscalationsCreatePathResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/escalation_paths",
             ),
             method: "POST",
@@ -144,13 +144,13 @@ export class EscalationsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.EscalationsCreatePathResultV2,
+                data: _response.body as IncidentIO.EscalationsCreatePathResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -166,7 +166,7 @@ export class EscalationsV2Client {
      * We recommend you create escalation paths in the incident.io dashboard where our path
      * builder makes it easy to use conditions and visualise the path.
      *
-     * @param {FernApi.EscalationsV2ShowPathRequest} request
+     * @param {IncidentIO.EscalationsV2ShowPathRequest} request
      * @param {EscalationsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -175,23 +175,23 @@ export class EscalationsV2Client {
      *     })
      */
     public showpath(
-        request: FernApi.EscalationsV2ShowPathRequest,
+        request: IncidentIO.EscalationsV2ShowPathRequest,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.EscalationsShowPathResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.EscalationsShowPathResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__showpath(request, requestOptions));
     }
 
     private async __showpath(
-        request: FernApi.EscalationsV2ShowPathRequest,
+        request: IncidentIO.EscalationsV2ShowPathRequest,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.EscalationsShowPathResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.EscalationsShowPathResultV2>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/escalation_paths/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -204,11 +204,14 @@ export class EscalationsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.EscalationsShowPathResultV2, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.EscalationsShowPathResultV2,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -224,7 +227,7 @@ export class EscalationsV2Client {
      * We recommend you create escalation paths in the incident.io dashboard where our path
      * builder makes it easy to use conditions and visualise the path.
      *
-     * @param {FernApi.EscalationsUpdatePathPayloadV2} request
+     * @param {IncidentIO.EscalationsUpdatePathPayloadV2} request
      * @param {EscalationsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -298,23 +301,23 @@ export class EscalationsV2Client {
      *     })
      */
     public updatepath(
-        request: FernApi.EscalationsUpdatePathPayloadV2,
+        request: IncidentIO.EscalationsUpdatePathPayloadV2,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.EscalationsUpdatePathResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.EscalationsUpdatePathResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__updatepath(request, requestOptions));
     }
 
     private async __updatepath(
-        request: FernApi.EscalationsUpdatePathPayloadV2,
+        request: IncidentIO.EscalationsUpdatePathPayloadV2,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.EscalationsUpdatePathResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.EscalationsUpdatePathResultV2>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/escalation_paths/${core.url.encodePathParam(id)}`,
             ),
             method: "PUT",
@@ -331,13 +334,13 @@ export class EscalationsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.EscalationsUpdatePathResultV2,
+                data: _response.body as IncidentIO.EscalationsUpdatePathResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -353,7 +356,7 @@ export class EscalationsV2Client {
      * We recommend you create escalation paths in the incident.io dashboard where our path
      * builder makes it easy to use conditions and visualise the path.
      *
-     * @param {FernApi.EscalationsV2DestroyPathRequest} request
+     * @param {IncidentIO.EscalationsV2DestroyPathRequest} request
      * @param {EscalationsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -362,14 +365,14 @@ export class EscalationsV2Client {
      *     })
      */
     public destroypath(
-        request: FernApi.EscalationsV2DestroyPathRequest,
+        request: IncidentIO.EscalationsV2DestroyPathRequest,
         requestOptions?: EscalationsV2Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__destroypath(request, requestOptions));
     }
 
     private async __destroypath(
-        request: FernApi.EscalationsV2DestroyPathRequest,
+        request: IncidentIO.EscalationsV2DestroyPathRequest,
         requestOptions?: EscalationsV2Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -378,7 +381,7 @@ export class EscalationsV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/escalation_paths/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -395,7 +398,7 @@ export class EscalationsV2Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -456,7 +459,7 @@ export class EscalationsV2Client {
      * 		curl --get 'https://api.incident.io/v2/escalations' \
      *             --data 'created_at[date_range]=2025-01-01~2025-01-31'
      *
-     * @param {FernApi.EscalationsV2ListRequest} request
+     * @param {IncidentIO.EscalationsV2ListRequest} request
      * @param {EscalationsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -466,16 +469,16 @@ export class EscalationsV2Client {
      *     })
      */
     public list(
-        request: FernApi.EscalationsV2ListRequest = {},
+        request: IncidentIO.EscalationsV2ListRequest = {},
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.EscalationsListResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.EscalationsListResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__list(request, requestOptions));
     }
 
     private async __list(
-        request: FernApi.EscalationsV2ListRequest = {},
+        request: IncidentIO.EscalationsV2ListRequest = {},
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.EscalationsListResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.EscalationsListResultV2>> {
         const {
             page_size: pageSize,
             after,
@@ -501,7 +504,7 @@ export class EscalationsV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/escalations",
             ),
             method: "GET",
@@ -514,11 +517,11 @@ export class EscalationsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.EscalationsListResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.EscalationsListResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -546,7 +549,7 @@ export class EscalationsV2Client {
      * in your internal developer platform). To escalate based on automated alerts, we
      * recommend sending events to an alert source instead.
      *
-     * @param {FernApi.EscalationsCreatePayloadV2} request
+     * @param {IncidentIO.EscalationsCreatePayloadV2} request
      * @param {EscalationsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -559,22 +562,22 @@ export class EscalationsV2Client {
      *     })
      */
     public create(
-        request: FernApi.EscalationsCreatePayloadV2,
+        request: IncidentIO.EscalationsCreatePayloadV2,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.EscalationsCreateResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.EscalationsCreateResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__create(request, requestOptions));
     }
 
     private async __create(
-        request: FernApi.EscalationsCreatePayloadV2,
+        request: IncidentIO.EscalationsCreatePayloadV2,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.EscalationsCreateResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.EscalationsCreateResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/escalations",
             ),
             method: "POST",
@@ -590,11 +593,11 @@ export class EscalationsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.EscalationsCreateResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.EscalationsCreateResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -607,7 +610,7 @@ export class EscalationsV2Client {
     /**
      * Show a specific escalation.
      *
-     * @param {FernApi.EscalationsV2ShowRequest} request
+     * @param {IncidentIO.EscalationsV2ShowRequest} request
      * @param {EscalationsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -616,23 +619,23 @@ export class EscalationsV2Client {
      *     })
      */
     public show(
-        request: FernApi.EscalationsV2ShowRequest,
+        request: IncidentIO.EscalationsV2ShowRequest,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.EscalationsShowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.EscalationsShowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.EscalationsV2ShowRequest,
+        request: IncidentIO.EscalationsV2ShowRequest,
         requestOptions?: EscalationsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.EscalationsShowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.EscalationsShowResultV2>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/escalations/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -645,11 +648,11 @@ export class EscalationsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.EscalationsShowResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.EscalationsShowResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

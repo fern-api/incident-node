@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace SchedulesV2Client {
     export type Options = BaseClientOptions;
@@ -29,7 +29,7 @@ export class SchedulesV2Client {
     /**
      * Get a list of schedule entries. The endpoint will return all entries that overlap with the given window, if one is provided.
      *
-     * @param {FernApi.SchedulesV2ListScheduleEntriesRequest} request
+     * @param {IncidentIO.SchedulesV2ListScheduleEntriesRequest} request
      * @param {SchedulesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -40,16 +40,16 @@ export class SchedulesV2Client {
      *     })
      */
     public listscheduleentries(
-        request: FernApi.SchedulesV2ListScheduleEntriesRequest,
+        request: IncidentIO.SchedulesV2ListScheduleEntriesRequest,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SchedulesListScheduleEntriesResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.SchedulesListScheduleEntriesResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__listscheduleentries(request, requestOptions));
     }
 
     private async __listscheduleentries(
-        request: FernApi.SchedulesV2ListScheduleEntriesRequest,
+        request: IncidentIO.SchedulesV2ListScheduleEntriesRequest,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SchedulesListScheduleEntriesResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SchedulesListScheduleEntriesResultV2>> {
         const {
             schedule_id: scheduleId,
             entry_window_start: entryWindowStart,
@@ -65,7 +65,7 @@ export class SchedulesV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/schedule_entries",
             ),
             method: "GET",
@@ -79,13 +79,13 @@ export class SchedulesV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.SchedulesListScheduleEntriesResultV2,
+                data: _response.body as IncidentIO.SchedulesListScheduleEntriesResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -98,7 +98,7 @@ export class SchedulesV2Client {
     /**
      * Create a new schedule override.
      *
-     * @param {FernApi.SchedulesCreateOverridePayloadV2} request
+     * @param {IncidentIO.SchedulesCreateOverridePayloadV2} request
      * @param {SchedulesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -116,22 +116,22 @@ export class SchedulesV2Client {
      *     })
      */
     public createoverride(
-        request: FernApi.SchedulesCreateOverridePayloadV2,
+        request: IncidentIO.SchedulesCreateOverridePayloadV2,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SchedulesCreateOverrideResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.SchedulesCreateOverrideResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__createoverride(request, requestOptions));
     }
 
     private async __createoverride(
-        request: FernApi.SchedulesCreateOverridePayloadV2,
+        request: IncidentIO.SchedulesCreateOverridePayloadV2,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SchedulesCreateOverrideResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SchedulesCreateOverrideResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/schedule_overrides",
             ),
             method: "POST",
@@ -148,13 +148,13 @@ export class SchedulesV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.SchedulesCreateOverrideResultV2,
+                data: _response.body as IncidentIO.SchedulesCreateOverrideResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -167,7 +167,7 @@ export class SchedulesV2Client {
     /**
      * List configured schedules.
      *
-     * @param {FernApi.SchedulesV2ListRequest} request
+     * @param {IncidentIO.SchedulesV2ListRequest} request
      * @param {SchedulesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -177,16 +177,16 @@ export class SchedulesV2Client {
      *     })
      */
     public list(
-        request: FernApi.SchedulesV2ListRequest = {},
+        request: IncidentIO.SchedulesV2ListRequest = {},
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SchedulesListResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.SchedulesListResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__list(request, requestOptions));
     }
 
     private async __list(
-        request: FernApi.SchedulesV2ListRequest = {},
+        request: IncidentIO.SchedulesV2ListRequest = {},
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SchedulesListResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SchedulesListResultV2>> {
         const { page_size: pageSize, after } = request;
         const _queryParams: Record<string, unknown> = {
             page_size: pageSize,
@@ -197,7 +197,7 @@ export class SchedulesV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/schedules",
             ),
             method: "GET",
@@ -210,11 +210,11 @@ export class SchedulesV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.SchedulesListResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.SchedulesListResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -227,7 +227,7 @@ export class SchedulesV2Client {
     /**
      * Create a new schedule.
      *
-     * @param {FernApi.SchedulesCreatePayloadV2} request
+     * @param {IncidentIO.SchedulesCreatePayloadV2} request
      * @param {SchedulesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -273,22 +273,22 @@ export class SchedulesV2Client {
      *     })
      */
     public create(
-        request: FernApi.SchedulesCreatePayloadV2,
+        request: IncidentIO.SchedulesCreatePayloadV2,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SchedulesCreateResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.SchedulesCreateResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__create(request, requestOptions));
     }
 
     private async __create(
-        request: FernApi.SchedulesCreatePayloadV2,
+        request: IncidentIO.SchedulesCreatePayloadV2,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SchedulesCreateResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SchedulesCreateResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/schedules",
             ),
             method: "POST",
@@ -304,11 +304,11 @@ export class SchedulesV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.SchedulesCreateResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.SchedulesCreateResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -321,7 +321,7 @@ export class SchedulesV2Client {
     /**
      * Get a single schedule.
      *
-     * @param {FernApi.SchedulesV2ShowRequest} request
+     * @param {IncidentIO.SchedulesV2ShowRequest} request
      * @param {SchedulesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -330,23 +330,23 @@ export class SchedulesV2Client {
      *     })
      */
     public show(
-        request: FernApi.SchedulesV2ShowRequest,
+        request: IncidentIO.SchedulesV2ShowRequest,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SchedulesShowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.SchedulesShowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.SchedulesV2ShowRequest,
+        request: IncidentIO.SchedulesV2ShowRequest,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SchedulesShowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SchedulesShowResultV2>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/schedules/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -359,11 +359,11 @@ export class SchedulesV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.SchedulesShowResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.SchedulesShowResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -376,7 +376,7 @@ export class SchedulesV2Client {
     /**
      * Update a schedule.
      *
-     * @param {FernApi.SchedulesUpdatePayloadV2} request
+     * @param {IncidentIO.SchedulesUpdatePayloadV2} request
      * @param {SchedulesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -423,23 +423,23 @@ export class SchedulesV2Client {
      *     })
      */
     public update(
-        request: FernApi.SchedulesUpdatePayloadV2,
+        request: IncidentIO.SchedulesUpdatePayloadV2,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SchedulesUpdateResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.SchedulesUpdateResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__update(request, requestOptions));
     }
 
     private async __update(
-        request: FernApi.SchedulesUpdatePayloadV2,
+        request: IncidentIO.SchedulesUpdatePayloadV2,
         requestOptions?: SchedulesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SchedulesUpdateResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SchedulesUpdateResultV2>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/schedules/${core.url.encodePathParam(id)}`,
             ),
             method: "PUT",
@@ -455,11 +455,11 @@ export class SchedulesV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.SchedulesUpdateResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.SchedulesUpdateResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -472,7 +472,7 @@ export class SchedulesV2Client {
     /**
      * Archives a single schedule.
      *
-     * @param {FernApi.SchedulesV2DestroyRequest} request
+     * @param {IncidentIO.SchedulesV2DestroyRequest} request
      * @param {SchedulesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -481,14 +481,14 @@ export class SchedulesV2Client {
      *     })
      */
     public destroy(
-        request: FernApi.SchedulesV2DestroyRequest,
+        request: IncidentIO.SchedulesV2DestroyRequest,
         requestOptions?: SchedulesV2Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__destroy(request, requestOptions));
     }
 
     private async __destroy(
-        request: FernApi.SchedulesV2DestroyRequest,
+        request: IncidentIO.SchedulesV2DestroyRequest,
         requestOptions?: SchedulesV2Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -497,7 +497,7 @@ export class SchedulesV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/schedules/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -514,7 +514,7 @@ export class SchedulesV2Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

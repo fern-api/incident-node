@@ -11,25 +11,25 @@ export function handleNonStatusCodeError(
 ): never {
     switch (error.reason) {
         case "non-json":
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: error.statusCode,
                 body: error.rawBody,
                 rawResponse: rawResponse,
             });
         case "body-is-null":
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: error.statusCode,
                 rawResponse: rawResponse,
             });
         case "timeout":
-            throw new errors.FernApiTimeoutError(`Timeout exceeded when calling ${method} ${path}.`);
+            throw new errors.IncidentIOTimeoutError(`Timeout exceeded when calling ${method} ${path}.`);
         case "unknown":
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 message: error.errorMessage,
                 rawResponse: rawResponse,
             });
         default:
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 message: "Unknown error",
                 rawResponse: rawResponse,
             });

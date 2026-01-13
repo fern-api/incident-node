@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace AlertEventsV2Client {
     export type Options = BaseClientOptions;
@@ -33,7 +33,7 @@ export class AlertEventsV2Client {
     /**
      * Create an alert event using an HTTP source.
      *
-     * @param {FernApi.AlertEventsCreateHttpPayloadV2} request
+     * @param {IncidentIO.AlertEventsCreateHttpPayloadV2} request
      * @param {AlertEventsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -54,16 +54,16 @@ export class AlertEventsV2Client {
      *     })
      */
     public createhttp(
-        request: FernApi.AlertEventsCreateHttpPayloadV2,
+        request: IncidentIO.AlertEventsCreateHttpPayloadV2,
         requestOptions?: AlertEventsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.AlertEventsCreateHttpResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.AlertEventsCreateHttpResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__createhttp(request, requestOptions));
     }
 
     private async __createhttp(
-        request: FernApi.AlertEventsCreateHttpPayloadV2,
+        request: IncidentIO.AlertEventsCreateHttpPayloadV2,
         requestOptions?: AlertEventsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.AlertEventsCreateHttpResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.AlertEventsCreateHttpResultV2>> {
         const { alert_source_config_id: alertSourceConfigId, token, ..._body } = request;
         const _queryParams: Record<string, unknown> = {
             token,
@@ -73,7 +73,7 @@ export class AlertEventsV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/alert_events/http/${core.url.encodePathParam(alertSourceConfigId)}`,
             ),
             method: "POST",
@@ -90,13 +90,13 @@ export class AlertEventsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.AlertEventsCreateHttpResultV2,
+                data: _response.body as IncidentIO.AlertEventsCreateHttpResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

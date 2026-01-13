@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace IncidentTypesV1Client {
     export type Options = BaseClientOptions;
@@ -38,19 +38,19 @@ export class IncidentTypesV1Client {
      */
     public list(
         requestOptions?: IncidentTypesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentTypesListResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentTypesListResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__list(requestOptions));
     }
 
     private async __list(
         requestOptions?: IncidentTypesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentTypesListResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentTypesListResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/incident_types",
             ),
             method: "GET",
@@ -63,11 +63,11 @@ export class IncidentTypesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentTypesListResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.IncidentTypesListResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -80,7 +80,7 @@ export class IncidentTypesV1Client {
     /**
      * Get a single incident type.
      *
-     * @param {FernApi.IncidentTypesV1ShowRequest} request
+     * @param {IncidentIO.IncidentTypesV1ShowRequest} request
      * @param {IncidentTypesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -89,23 +89,23 @@ export class IncidentTypesV1Client {
      *     })
      */
     public show(
-        request: FernApi.IncidentTypesV1ShowRequest,
+        request: IncidentIO.IncidentTypesV1ShowRequest,
         requestOptions?: IncidentTypesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentTypesShowResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentTypesShowResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.IncidentTypesV1ShowRequest,
+        request: IncidentIO.IncidentTypesV1ShowRequest,
         requestOptions?: IncidentTypesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentTypesShowResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentTypesShowResultV1>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/incident_types/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -118,11 +118,11 @@ export class IncidentTypesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentTypesShowResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.IncidentTypesShowResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

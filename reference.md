@@ -1,6 +1,6 @@
 # Reference
 ## Actions V1
-<details><summary><code>client.actionsV1.<a href="/src/api/resources/actionsV1/client/Client.ts">list</a>({ ...params }) -> FernApi.ActionsListResultV1</code></summary>
+<details><summary><code>client.actionsV1.<a href="/src/api/resources/actionsV1/client/Client.ts">list</a>({ ...params }) -> IncidentIO.ActionsListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -46,7 +46,7 @@ await client.actionsV1.list({
 <dl>
 <dd>
 
-**request:** `FernApi.ActionsV1ListRequest` 
+**request:** `IncidentIO.ActionsV1ListRequest` 
     
 </dd>
 </dl>
@@ -66,7 +66,7 @@ await client.actionsV1.list({
 </dl>
 </details>
 
-<details><summary><code>client.actionsV1.<a href="/src/api/resources/actionsV1/client/Client.ts">show</a>({ ...params }) -> FernApi.ActionsShowResultV1</code></summary>
+<details><summary><code>client.actionsV1.<a href="/src/api/resources/actionsV1/client/Client.ts">show</a>({ ...params }) -> IncidentIO.ActionsShowResultV1</code></summary>
 <dl>
 <dd>
 
@@ -111,7 +111,7 @@ await client.actionsV1.show({
 <dl>
 <dd>
 
-**request:** `FernApi.ActionsV1ShowRequest` 
+**request:** `IncidentIO.ActionsV1ShowRequest` 
     
 </dd>
 </dl>
@@ -132,7 +132,7 @@ await client.actionsV1.show({
 </details>
 
 ## Custom Field Options V1
-<details><summary><code>client.customFieldOptionsV1.<a href="/src/api/resources/customFieldOptionsV1/client/Client.ts">list</a>({ ...params }) -> FernApi.CustomFieldOptionsListResultV1</code></summary>
+<details><summary><code>client.customFieldOptionsV1.<a href="/src/api/resources/customFieldOptionsV1/client/Client.ts">list</a>({ ...params }) -> IncidentIO.CustomFieldOptionsListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -179,7 +179,7 @@ await client.customFieldOptionsV1.list({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldOptionsV1ListRequest` 
+**request:** `IncidentIO.CustomFieldOptionsV1ListRequest` 
     
 </dd>
 </dl>
@@ -199,7 +199,7 @@ await client.customFieldOptionsV1.list({
 </dl>
 </details>
 
-<details><summary><code>client.customFieldOptionsV1.<a href="/src/api/resources/customFieldOptionsV1/client/Client.ts">create</a>({ ...params }) -> FernApi.CustomFieldOptionsCreateResultV1</code></summary>
+<details><summary><code>client.customFieldOptionsV1.<a href="/src/api/resources/customFieldOptionsV1/client/Client.ts">create</a>({ ...params }) -> IncidentIO.CustomFieldOptionsCreateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -246,7 +246,7 @@ await client.customFieldOptionsV1.create({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldOptionsCreatePayloadV1` 
+**request:** `IncidentIO.CustomFieldOptionsCreatePayloadV1` 
     
 </dd>
 </dl>
@@ -266,7 +266,7 @@ await client.customFieldOptionsV1.create({
 </dl>
 </details>
 
-<details><summary><code>client.customFieldOptionsV1.<a href="/src/api/resources/customFieldOptionsV1/client/Client.ts">show</a>({ ...params }) -> FernApi.CustomFieldOptionsShowResultV1</code></summary>
+<details><summary><code>client.customFieldOptionsV1.<a href="/src/api/resources/customFieldOptionsV1/client/Client.ts">show</a>({ ...params }) -> IncidentIO.CustomFieldOptionsShowResultV1</code></summary>
 <dl>
 <dd>
 
@@ -311,7 +311,7 @@ await client.customFieldOptionsV1.show({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldOptionsV1ShowRequest` 
+**request:** `IncidentIO.CustomFieldOptionsV1ShowRequest` 
     
 </dd>
 </dl>
@@ -331,7 +331,7 @@ await client.customFieldOptionsV1.show({
 </dl>
 </details>
 
-<details><summary><code>client.customFieldOptionsV1.<a href="/src/api/resources/customFieldOptionsV1/client/Client.ts">update</a>({ ...params }) -> FernApi.CustomFieldOptionsUpdateResultV1</code></summary>
+<details><summary><code>client.customFieldOptionsV1.<a href="/src/api/resources/customFieldOptionsV1/client/Client.ts">update</a>({ ...params }) -> IncidentIO.CustomFieldOptionsUpdateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -378,7 +378,7 @@ await client.customFieldOptionsV1.update({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldOptionsUpdatePayloadV1` 
+**request:** `IncidentIO.CustomFieldOptionsUpdatePayloadV1` 
     
 </dd>
 </dl>
@@ -443,7 +443,7 @@ await client.customFieldOptionsV1.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldOptionsV1DeleteRequest` 
+**request:** `IncidentIO.CustomFieldOptionsV1DeleteRequest` 
     
 </dd>
 </dl>
@@ -464,7 +464,7 @@ await client.customFieldOptionsV1.delete({
 </details>
 
 ## Custom Fields V1
-<details><summary><code>client.customFieldsV1.<a href="/src/api/resources/customFieldsV1/client/Client.ts">list</a>() -> FernApi.CustomFieldsListResultV1</code></summary>
+<details><summary><code>client.customFieldsV1.<a href="/src/api/resources/customFieldsV1/client/Client.ts">list</a>() -> IncidentIO.CustomFieldsListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -519,7 +519,7 @@ await client.customFieldsV1.list();
 </dl>
 </details>
 
-<details><summary><code>client.customFieldsV1.<a href="/src/api/resources/customFieldsV1/client/Client.ts">create</a>({ ...params }) -> FernApi.CustomFieldsCreateResultV1</code></summary>
+<details><summary><code>client.customFieldsV1.<a href="/src/api/resources/customFieldsV1/client/Client.ts">create</a>({ ...params }) -> IncidentIO.CustomFieldsCreateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -572,7 +572,7 @@ await client.customFieldsV1.create({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldsCreatePayloadV1` 
+**request:** `IncidentIO.CustomFieldsCreatePayloadV1` 
     
 </dd>
 </dl>
@@ -592,7 +592,7 @@ await client.customFieldsV1.create({
 </dl>
 </details>
 
-<details><summary><code>client.customFieldsV1.<a href="/src/api/resources/customFieldsV1/client/Client.ts">show</a>({ ...params }) -> FernApi.CustomFieldsShowResultV1</code></summary>
+<details><summary><code>client.customFieldsV1.<a href="/src/api/resources/customFieldsV1/client/Client.ts">show</a>({ ...params }) -> IncidentIO.CustomFieldsShowResultV1</code></summary>
 <dl>
 <dd>
 
@@ -637,7 +637,7 @@ await client.customFieldsV1.show({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldsV1ShowRequest` 
+**request:** `IncidentIO.CustomFieldsV1ShowRequest` 
     
 </dd>
 </dl>
@@ -657,7 +657,7 @@ await client.customFieldsV1.show({
 </dl>
 </details>
 
-<details><summary><code>client.customFieldsV1.<a href="/src/api/resources/customFieldsV1/client/Client.ts">update</a>({ ...params }) -> FernApi.CustomFieldsUpdateResultV1</code></summary>
+<details><summary><code>client.customFieldsV1.<a href="/src/api/resources/customFieldsV1/client/Client.ts">update</a>({ ...params }) -> IncidentIO.CustomFieldsUpdateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -710,7 +710,7 @@ await client.customFieldsV1.update({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldsUpdatePayloadV1` 
+**request:** `IncidentIO.CustomFieldsUpdatePayloadV1` 
     
 </dd>
 </dl>
@@ -775,7 +775,7 @@ await client.customFieldsV1.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldsV1DeleteRequest` 
+**request:** `IncidentIO.CustomFieldsV1DeleteRequest` 
     
 </dd>
 </dl>
@@ -796,7 +796,7 @@ await client.customFieldsV1.delete({
 </details>
 
 ## Utilities V1
-<details><summary><code>client.utilitiesV1.<a href="/src/api/resources/utilitiesV1/client/Client.ts">identity</a>() -> FernApi.UtilitiesIdentityResultV1</code></summary>
+<details><summary><code>client.utilitiesV1.<a href="/src/api/resources/utilitiesV1/client/Client.ts">identity</a>() -> IncidentIO.UtilitiesIdentityResultV1</code></summary>
 <dl>
 <dd>
 
@@ -852,7 +852,7 @@ await client.utilitiesV1.identity();
 </details>
 
 ## Incident Attachments V1
-<details><summary><code>client.incidentAttachmentsV1.<a href="/src/api/resources/incidentAttachmentsV1/client/Client.ts">list</a>({ ...params }) -> FernApi.IncidentAttachmentsListResultV1</code></summary>
+<details><summary><code>client.incidentAttachmentsV1.<a href="/src/api/resources/incidentAttachmentsV1/client/Client.ts">list</a>({ ...params }) -> IncidentIO.IncidentAttachmentsListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -898,7 +898,7 @@ await client.incidentAttachmentsV1.list({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentAttachmentsV1ListRequest` 
+**request:** `IncidentIO.IncidentAttachmentsV1ListRequest` 
     
 </dd>
 </dl>
@@ -918,7 +918,7 @@ await client.incidentAttachmentsV1.list({
 </dl>
 </details>
 
-<details><summary><code>client.incidentAttachmentsV1.<a href="/src/api/resources/incidentAttachmentsV1/client/Client.ts">create</a>({ ...params }) -> FernApi.IncidentAttachmentsCreateResultV1</code></summary>
+<details><summary><code>client.incidentAttachmentsV1.<a href="/src/api/resources/incidentAttachmentsV1/client/Client.ts">create</a>({ ...params }) -> IncidentIO.IncidentAttachmentsCreateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -967,7 +967,7 @@ await client.incidentAttachmentsV1.create({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentAttachmentsCreatePayloadV1` 
+**request:** `IncidentIO.IncidentAttachmentsCreatePayloadV1` 
     
 </dd>
 </dl>
@@ -1032,7 +1032,7 @@ await client.incidentAttachmentsV1.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentAttachmentsV1DeleteRequest` 
+**request:** `IncidentIO.IncidentAttachmentsV1DeleteRequest` 
     
 </dd>
 </dl>
@@ -1053,7 +1053,7 @@ await client.incidentAttachmentsV1.delete({
 </details>
 
 ## Incident Memberships V1
-<details><summary><code>client.incidentMembershipsV1.<a href="/src/api/resources/incidentMembershipsV1/client/Client.ts">create</a>({ ...params }) -> FernApi.IncidentMembershipsCreateResultV1</code></summary>
+<details><summary><code>client.incidentMembershipsV1.<a href="/src/api/resources/incidentMembershipsV1/client/Client.ts">create</a>({ ...params }) -> IncidentIO.IncidentMembershipsCreateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1099,7 +1099,7 @@ await client.incidentMembershipsV1.create({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentMembershipsCreatePayloadV1` 
+**request:** `IncidentIO.IncidentMembershipsCreatePayloadV1` 
     
 </dd>
 </dl>
@@ -1165,7 +1165,7 @@ await client.incidentMembershipsV1.revoke({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentMembershipsRevokePayloadV1` 
+**request:** `IncidentIO.IncidentMembershipsRevokePayloadV1` 
     
 </dd>
 </dl>
@@ -1186,7 +1186,7 @@ await client.incidentMembershipsV1.revoke({
 </details>
 
 ## Incident Relationships V1
-<details><summary><code>client.incidentRelationshipsV1.<a href="/src/api/resources/incidentRelationshipsV1/client/Client.ts">list</a>({ ...params }) -> FernApi.IncidentRelationshipsListResultV1</code></summary>
+<details><summary><code>client.incidentRelationshipsV1.<a href="/src/api/resources/incidentRelationshipsV1/client/Client.ts">list</a>({ ...params }) -> IncidentIO.IncidentRelationshipsListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1233,7 +1233,7 @@ await client.incidentRelationshipsV1.list({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentRelationshipsV1ListRequest` 
+**request:** `IncidentIO.IncidentRelationshipsV1ListRequest` 
     
 </dd>
 </dl>
@@ -1254,7 +1254,7 @@ await client.incidentRelationshipsV1.list({
 </details>
 
 ## Incident Roles V1
-<details><summary><code>client.incidentRolesV1.<a href="/src/api/resources/incidentRolesV1/client/Client.ts">list</a>() -> FernApi.IncidentRolesListResultV1</code></summary>
+<details><summary><code>client.incidentRolesV1.<a href="/src/api/resources/incidentRolesV1/client/Client.ts">list</a>() -> IncidentIO.IncidentRolesListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1309,7 +1309,7 @@ await client.incidentRolesV1.list();
 </dl>
 </details>
 
-<details><summary><code>client.incidentRolesV1.<a href="/src/api/resources/incidentRolesV1/client/Client.ts">create</a>({ ...params }) -> FernApi.IncidentRolesCreateResultV1</code></summary>
+<details><summary><code>client.incidentRolesV1.<a href="/src/api/resources/incidentRolesV1/client/Client.ts">create</a>({ ...params }) -> IncidentIO.IncidentRolesCreateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1358,7 +1358,7 @@ await client.incidentRolesV1.create({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentRolesCreatePayloadV1` 
+**request:** `IncidentIO.IncidentRolesCreatePayloadV1` 
     
 </dd>
 </dl>
@@ -1378,7 +1378,7 @@ await client.incidentRolesV1.create({
 </dl>
 </details>
 
-<details><summary><code>client.incidentRolesV1.<a href="/src/api/resources/incidentRolesV1/client/Client.ts">show</a>({ ...params }) -> FernApi.IncidentRolesShowResultV1</code></summary>
+<details><summary><code>client.incidentRolesV1.<a href="/src/api/resources/incidentRolesV1/client/Client.ts">show</a>({ ...params }) -> IncidentIO.IncidentRolesShowResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1423,7 +1423,7 @@ await client.incidentRolesV1.show({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentRolesV1ShowRequest` 
+**request:** `IncidentIO.IncidentRolesV1ShowRequest` 
     
 </dd>
 </dl>
@@ -1443,7 +1443,7 @@ await client.incidentRolesV1.show({
 </dl>
 </details>
 
-<details><summary><code>client.incidentRolesV1.<a href="/src/api/resources/incidentRolesV1/client/Client.ts">update</a>({ ...params }) -> FernApi.IncidentRolesUpdateResultV1</code></summary>
+<details><summary><code>client.incidentRolesV1.<a href="/src/api/resources/incidentRolesV1/client/Client.ts">update</a>({ ...params }) -> IncidentIO.IncidentRolesUpdateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1493,7 +1493,7 @@ await client.incidentRolesV1.update({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentRolesUpdatePayloadV1` 
+**request:** `IncidentIO.IncidentRolesUpdatePayloadV1` 
     
 </dd>
 </dl>
@@ -1558,7 +1558,7 @@ await client.incidentRolesV1.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentRolesV1DeleteRequest` 
+**request:** `IncidentIO.IncidentRolesV1DeleteRequest` 
     
 </dd>
 </dl>
@@ -1579,7 +1579,7 @@ await client.incidentRolesV1.delete({
 </details>
 
 ## Incident Statuses V1
-<details><summary><code>client.incidentStatusesV1.<a href="/src/api/resources/incidentStatusesV1/client/Client.ts">list</a>() -> FernApi.IncidentStatusesListResultV1</code></summary>
+<details><summary><code>client.incidentStatusesV1.<a href="/src/api/resources/incidentStatusesV1/client/Client.ts">list</a>() -> IncidentIO.IncidentStatusesListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1634,7 +1634,7 @@ await client.incidentStatusesV1.list();
 </dl>
 </details>
 
-<details><summary><code>client.incidentStatusesV1.<a href="/src/api/resources/incidentStatusesV1/client/Client.ts">create</a>({ ...params }) -> FernApi.IncidentStatusesCreateResultV1</code></summary>
+<details><summary><code>client.incidentStatusesV1.<a href="/src/api/resources/incidentStatusesV1/client/Client.ts">create</a>({ ...params }) -> IncidentIO.IncidentStatusesCreateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1681,7 +1681,7 @@ await client.incidentStatusesV1.create({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentStatusesCreatePayloadV1` 
+**request:** `IncidentIO.IncidentStatusesCreatePayloadV1` 
     
 </dd>
 </dl>
@@ -1701,7 +1701,7 @@ await client.incidentStatusesV1.create({
 </dl>
 </details>
 
-<details><summary><code>client.incidentStatusesV1.<a href="/src/api/resources/incidentStatusesV1/client/Client.ts">show</a>({ ...params }) -> FernApi.IncidentStatusesShowResultV1</code></summary>
+<details><summary><code>client.incidentStatusesV1.<a href="/src/api/resources/incidentStatusesV1/client/Client.ts">show</a>({ ...params }) -> IncidentIO.IncidentStatusesShowResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1746,7 +1746,7 @@ await client.incidentStatusesV1.show({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentStatusesV1ShowRequest` 
+**request:** `IncidentIO.IncidentStatusesV1ShowRequest` 
     
 </dd>
 </dl>
@@ -1766,7 +1766,7 @@ await client.incidentStatusesV1.show({
 </dl>
 </details>
 
-<details><summary><code>client.incidentStatusesV1.<a href="/src/api/resources/incidentStatusesV1/client/Client.ts">update</a>({ ...params }) -> FernApi.IncidentStatusesUpdateResultV1</code></summary>
+<details><summary><code>client.incidentStatusesV1.<a href="/src/api/resources/incidentStatusesV1/client/Client.ts">update</a>({ ...params }) -> IncidentIO.IncidentStatusesUpdateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1813,7 +1813,7 @@ await client.incidentStatusesV1.update({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentStatusesUpdatePayloadV1` 
+**request:** `IncidentIO.IncidentStatusesUpdatePayloadV1` 
     
 </dd>
 </dl>
@@ -1878,7 +1878,7 @@ await client.incidentStatusesV1.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentStatusesV1DeleteRequest` 
+**request:** `IncidentIO.IncidentStatusesV1DeleteRequest` 
     
 </dd>
 </dl>
@@ -1899,7 +1899,7 @@ await client.incidentStatusesV1.delete({
 </details>
 
 ## Incident Types V1
-<details><summary><code>client.incidentTypesV1.<a href="/src/api/resources/incidentTypesV1/client/Client.ts">list</a>() -> FernApi.IncidentTypesListResultV1</code></summary>
+<details><summary><code>client.incidentTypesV1.<a href="/src/api/resources/incidentTypesV1/client/Client.ts">list</a>() -> IncidentIO.IncidentTypesListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1954,7 +1954,7 @@ await client.incidentTypesV1.list();
 </dl>
 </details>
 
-<details><summary><code>client.incidentTypesV1.<a href="/src/api/resources/incidentTypesV1/client/Client.ts">show</a>({ ...params }) -> FernApi.IncidentTypesShowResultV1</code></summary>
+<details><summary><code>client.incidentTypesV1.<a href="/src/api/resources/incidentTypesV1/client/Client.ts">show</a>({ ...params }) -> IncidentIO.IncidentTypesShowResultV1</code></summary>
 <dl>
 <dd>
 
@@ -1999,7 +1999,7 @@ await client.incidentTypesV1.show({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentTypesV1ShowRequest` 
+**request:** `IncidentIO.IncidentTypesV1ShowRequest` 
     
 </dd>
 </dl>
@@ -2020,7 +2020,7 @@ await client.incidentTypesV1.show({
 </details>
 
 ## Incidents V1
-<details><summary><code>client.incidentsV1.<a href="/src/api/resources/incidentsV1/client/Client.ts">list</a>({ ...params }) -> FernApi.IncidentsListResultV1</code></summary>
+<details><summary><code>client.incidentsV1.<a href="/src/api/resources/incidentsV1/client/Client.ts">list</a>({ ...params }) -> IncidentIO.IncidentsListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2066,7 +2066,7 @@ await client.incidentsV1.list({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentsV1ListRequest` 
+**request:** `IncidentIO.IncidentsV1ListRequest` 
     
 </dd>
 </dl>
@@ -2086,7 +2086,7 @@ await client.incidentsV1.list({
 </dl>
 </details>
 
-<details><summary><code>client.incidentsV1.<a href="/src/api/resources/incidentsV1/client/Client.ts">create</a>({ ...params }) -> FernApi.IncidentsCreateResultV1</code></summary>
+<details><summary><code>client.incidentsV1.<a href="/src/api/resources/incidentsV1/client/Client.ts">create</a>({ ...params }) -> IncidentIO.IncidentsCreateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2161,7 +2161,7 @@ await client.incidentsV1.create({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentsCreatePayloadV1` 
+**request:** `IncidentIO.IncidentsCreatePayloadV1` 
     
 </dd>
 </dl>
@@ -2181,7 +2181,7 @@ await client.incidentsV1.create({
 </dl>
 </details>
 
-<details><summary><code>client.incidentsV1.<a href="/src/api/resources/incidentsV1/client/Client.ts">show</a>({ ...params }) -> FernApi.IncidentsShowResultV1</code></summary>
+<details><summary><code>client.incidentsV1.<a href="/src/api/resources/incidentsV1/client/Client.ts">show</a>({ ...params }) -> IncidentIO.IncidentsShowResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2226,7 +2226,7 @@ await client.incidentsV1.show({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentsV1ShowRequest` 
+**request:** `IncidentIO.IncidentsV1ShowRequest` 
     
 </dd>
 </dl>
@@ -2247,7 +2247,7 @@ await client.incidentsV1.show({
 </details>
 
 ## IPAllowlists V1
-<details><summary><code>client.ipallowlistsV1.<a href="/src/api/resources/ipallowlistsV1/client/Client.ts">showipallowlist</a>() -> FernApi.IpAllowlistsShowIpAllowlistResultV1</code></summary>
+<details><summary><code>client.ipallowlistsV1.<a href="/src/api/resources/ipallowlistsV1/client/Client.ts">showipallowlist</a>() -> IncidentIO.IpAllowlistsShowIpAllowlistResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2302,7 +2302,7 @@ await client.ipallowlistsV1.showipallowlist();
 </dl>
 </details>
 
-<details><summary><code>client.ipallowlistsV1.<a href="/src/api/resources/ipallowlistsV1/client/Client.ts">updateipallowlist</a>({ ...params }) -> FernApi.IpAllowlistsUpdateIpAllowlistResultV1</code></summary>
+<details><summary><code>client.ipallowlistsV1.<a href="/src/api/resources/ipallowlistsV1/client/Client.ts">updateipallowlist</a>({ ...params }) -> IncidentIO.IpAllowlistsUpdateIpAllowlistResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2352,7 +2352,7 @@ await client.ipallowlistsV1.updateipallowlist({
 <dl>
 <dd>
 
-**request:** `FernApi.IpAllowlistsUpdateIpAllowlistPayloadV1` 
+**request:** `IncidentIO.IpAllowlistsUpdateIpAllowlistPayloadV1` 
     
 </dd>
 </dl>
@@ -2373,7 +2373,7 @@ await client.ipallowlistsV1.updateipallowlist({
 </details>
 
 ## Severities V1
-<details><summary><code>client.severitiesV1.<a href="/src/api/resources/severitiesV1/client/Client.ts">list</a>() -> FernApi.SeveritiesListResultV1</code></summary>
+<details><summary><code>client.severitiesV1.<a href="/src/api/resources/severitiesV1/client/Client.ts">list</a>() -> IncidentIO.SeveritiesListResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2428,7 +2428,7 @@ await client.severitiesV1.list();
 </dl>
 </details>
 
-<details><summary><code>client.severitiesV1.<a href="/src/api/resources/severitiesV1/client/Client.ts">create</a>({ ...params }) -> FernApi.SeveritiesCreateResultV1</code></summary>
+<details><summary><code>client.severitiesV1.<a href="/src/api/resources/severitiesV1/client/Client.ts">create</a>({ ...params }) -> IncidentIO.SeveritiesCreateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2475,7 +2475,7 @@ await client.severitiesV1.create({
 <dl>
 <dd>
 
-**request:** `FernApi.SeveritiesCreatePayloadV1` 
+**request:** `IncidentIO.SeveritiesCreatePayloadV1` 
     
 </dd>
 </dl>
@@ -2495,7 +2495,7 @@ await client.severitiesV1.create({
 </dl>
 </details>
 
-<details><summary><code>client.severitiesV1.<a href="/src/api/resources/severitiesV1/client/Client.ts">show</a>({ ...params }) -> FernApi.SeveritiesShowResultV1</code></summary>
+<details><summary><code>client.severitiesV1.<a href="/src/api/resources/severitiesV1/client/Client.ts">show</a>({ ...params }) -> IncidentIO.SeveritiesShowResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2540,7 +2540,7 @@ await client.severitiesV1.show({
 <dl>
 <dd>
 
-**request:** `FernApi.SeveritiesV1ShowRequest` 
+**request:** `IncidentIO.SeveritiesV1ShowRequest` 
     
 </dd>
 </dl>
@@ -2560,7 +2560,7 @@ await client.severitiesV1.show({
 </dl>
 </details>
 
-<details><summary><code>client.severitiesV1.<a href="/src/api/resources/severitiesV1/client/Client.ts">update</a>({ ...params }) -> FernApi.SeveritiesUpdateResultV1</code></summary>
+<details><summary><code>client.severitiesV1.<a href="/src/api/resources/severitiesV1/client/Client.ts">update</a>({ ...params }) -> IncidentIO.SeveritiesUpdateResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2608,7 +2608,7 @@ await client.severitiesV1.update({
 <dl>
 <dd>
 
-**request:** `FernApi.SeveritiesUpdatePayloadV1` 
+**request:** `IncidentIO.SeveritiesUpdatePayloadV1` 
     
 </dd>
 </dl>
@@ -2673,7 +2673,7 @@ await client.severitiesV1.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.SeveritiesV1DeleteRequest` 
+**request:** `IncidentIO.SeveritiesV1DeleteRequest` 
     
 </dd>
 </dl>
@@ -2694,7 +2694,7 @@ await client.severitiesV1.delete({
 </details>
 
 ## Status Pages V1
-<details><summary><code>client.statusPagesV1.<a href="/src/api/resources/statusPagesV1/client/Client.ts">listresponseincidents</a>({ ...params }) -> FernApi.StatusPagesListResponseIncidentsResultV1</code></summary>
+<details><summary><code>client.statusPagesV1.<a href="/src/api/resources/statusPagesV1/client/Client.ts">listresponseincidents</a>({ ...params }) -> IncidentIO.StatusPagesListResponseIncidentsResultV1</code></summary>
 <dl>
 <dd>
 
@@ -2740,7 +2740,7 @@ await client.statusPagesV1.listresponseincidents({
 <dl>
 <dd>
 
-**request:** `FernApi.StatusPagesV1ListResponseIncidentsRequest` 
+**request:** `IncidentIO.StatusPagesV1ListResponseIncidentsRequest` 
     
 </dd>
 </dl>
@@ -2761,7 +2761,7 @@ await client.statusPagesV1.listresponseincidents({
 </details>
 
 ## Actions V2
-<details><summary><code>client.actionsV2.<a href="/src/api/resources/actionsV2/client/Client.ts">list</a>({ ...params }) -> FernApi.ActionsListResultV2</code></summary>
+<details><summary><code>client.actionsV2.<a href="/src/api/resources/actionsV2/client/Client.ts">list</a>({ ...params }) -> IncidentIO.ActionsListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -2806,7 +2806,7 @@ await client.actionsV2.list({
 <dl>
 <dd>
 
-**request:** `FernApi.ActionsV2ListRequest` 
+**request:** `IncidentIO.ActionsV2ListRequest` 
     
 </dd>
 </dl>
@@ -2826,7 +2826,7 @@ await client.actionsV2.list({
 </dl>
 </details>
 
-<details><summary><code>client.actionsV2.<a href="/src/api/resources/actionsV2/client/Client.ts">show</a>({ ...params }) -> FernApi.ActionsShowResultV2</code></summary>
+<details><summary><code>client.actionsV2.<a href="/src/api/resources/actionsV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.ActionsShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -2871,7 +2871,7 @@ await client.actionsV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.ActionsV2ShowRequest` 
+**request:** `IncidentIO.ActionsV2ShowRequest` 
     
 </dd>
 </dl>
@@ -2892,7 +2892,7 @@ await client.actionsV2.show({
 </details>
 
 ## Alert Attributes V2
-<details><summary><code>client.alertAttributesV2.<a href="/src/api/resources/alertAttributesV2/client/Client.ts">list</a>() -> FernApi.AlertAttributesListResultV2</code></summary>
+<details><summary><code>client.alertAttributesV2.<a href="/src/api/resources/alertAttributesV2/client/Client.ts">list</a>() -> IncidentIO.AlertAttributesListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -2947,7 +2947,7 @@ await client.alertAttributesV2.list();
 </dl>
 </details>
 
-<details><summary><code>client.alertAttributesV2.<a href="/src/api/resources/alertAttributesV2/client/Client.ts">create</a>({ ...params }) -> FernApi.AlertAttributesCreateResultV2</code></summary>
+<details><summary><code>client.alertAttributesV2.<a href="/src/api/resources/alertAttributesV2/client/Client.ts">create</a>({ ...params }) -> IncidentIO.AlertAttributesCreateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -2995,7 +2995,7 @@ await client.alertAttributesV2.create({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertAttributesCreatePayloadV2` 
+**request:** `IncidentIO.AlertAttributesCreatePayloadV2` 
     
 </dd>
 </dl>
@@ -3015,7 +3015,7 @@ await client.alertAttributesV2.create({
 </dl>
 </details>
 
-<details><summary><code>client.alertAttributesV2.<a href="/src/api/resources/alertAttributesV2/client/Client.ts">show</a>({ ...params }) -> FernApi.AlertAttributesShowResultV2</code></summary>
+<details><summary><code>client.alertAttributesV2.<a href="/src/api/resources/alertAttributesV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.AlertAttributesShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -3060,7 +3060,7 @@ await client.alertAttributesV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertAttributesV2ShowRequest` 
+**request:** `IncidentIO.AlertAttributesV2ShowRequest` 
     
 </dd>
 </dl>
@@ -3080,7 +3080,7 @@ await client.alertAttributesV2.show({
 </dl>
 </details>
 
-<details><summary><code>client.alertAttributesV2.<a href="/src/api/resources/alertAttributesV2/client/Client.ts">update</a>({ ...params }) -> FernApi.AlertAttributesUpdateResultV2</code></summary>
+<details><summary><code>client.alertAttributesV2.<a href="/src/api/resources/alertAttributesV2/client/Client.ts">update</a>({ ...params }) -> IncidentIO.AlertAttributesUpdateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -3129,7 +3129,7 @@ await client.alertAttributesV2.update({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertAttributesUpdatePayloadV2` 
+**request:** `IncidentIO.AlertAttributesUpdatePayloadV2` 
     
 </dd>
 </dl>
@@ -3194,7 +3194,7 @@ await client.alertAttributesV2.destroy({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertAttributesV2DestroyRequest` 
+**request:** `IncidentIO.AlertAttributesV2DestroyRequest` 
     
 </dd>
 </dl>
@@ -3215,7 +3215,7 @@ await client.alertAttributesV2.destroy({
 </details>
 
 ## Alert Events V2
-<details><summary><code>client.alertEventsV2.<a href="/src/api/resources/alertEventsV2/client/Client.ts">createhttp</a>({ ...params }) -> FernApi.AlertEventsCreateHttpResultV2</code></summary>
+<details><summary><code>client.alertEventsV2.<a href="/src/api/resources/alertEventsV2/client/Client.ts">createhttp</a>({ ...params }) -> IncidentIO.AlertEventsCreateHttpResultV2</code></summary>
 <dl>
 <dd>
 
@@ -3272,7 +3272,7 @@ await client.alertEventsV2.createhttp({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertEventsCreateHttpPayloadV2` 
+**request:** `IncidentIO.AlertEventsCreateHttpPayloadV2` 
     
 </dd>
 </dl>
@@ -3293,7 +3293,7 @@ await client.alertEventsV2.createhttp({
 </details>
 
 ## Alert Routes V2
-<details><summary><code>client.alertRoutesV2.<a href="/src/api/resources/alertRoutesV2/client/Client.ts">list</a>({ ...params }) -> FernApi.AlertRoutesListResultV2</code></summary>
+<details><summary><code>client.alertRoutesV2.<a href="/src/api/resources/alertRoutesV2/client/Client.ts">list</a>({ ...params }) -> IncidentIO.AlertRoutesListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -3339,7 +3339,7 @@ await client.alertRoutesV2.list({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertRoutesV2ListRequest` 
+**request:** `IncidentIO.AlertRoutesV2ListRequest` 
     
 </dd>
 </dl>
@@ -3359,7 +3359,7 @@ await client.alertRoutesV2.list({
 </dl>
 </details>
 
-<details><summary><code>client.alertRoutesV2.<a href="/src/api/resources/alertRoutesV2/client/Client.ts">create</a>({ ...params }) -> FernApi.AlertRoutesCreateResultV2</code></summary>
+<details><summary><code>client.alertRoutesV2.<a href="/src/api/resources/alertRoutesV2/client/Client.ts">create</a>({ ...params }) -> IncidentIO.AlertRoutesCreateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -3728,7 +3728,7 @@ await client.alertRoutesV2.create({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertRoutesCreatePayloadV2` 
+**request:** `IncidentIO.AlertRoutesCreatePayloadV2` 
     
 </dd>
 </dl>
@@ -3748,7 +3748,7 @@ await client.alertRoutesV2.create({
 </dl>
 </details>
 
-<details><summary><code>client.alertRoutesV2.<a href="/src/api/resources/alertRoutesV2/client/Client.ts">show</a>({ ...params }) -> FernApi.AlertRoutesShowResultV2</code></summary>
+<details><summary><code>client.alertRoutesV2.<a href="/src/api/resources/alertRoutesV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.AlertRoutesShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -3793,7 +3793,7 @@ await client.alertRoutesV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertRoutesV2ShowRequest` 
+**request:** `IncidentIO.AlertRoutesV2ShowRequest` 
     
 </dd>
 </dl>
@@ -3813,7 +3813,7 @@ await client.alertRoutesV2.show({
 </dl>
 </details>
 
-<details><summary><code>client.alertRoutesV2.<a href="/src/api/resources/alertRoutesV2/client/Client.ts">update</a>({ ...params }) -> FernApi.AlertRoutesUpdateResultV2</code></summary>
+<details><summary><code>client.alertRoutesV2.<a href="/src/api/resources/alertRoutesV2/client/Client.ts">update</a>({ ...params }) -> IncidentIO.AlertRoutesUpdateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -4183,7 +4183,7 @@ await client.alertRoutesV2.update({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertRoutesUpdatePayloadV2` 
+**request:** `IncidentIO.AlertRoutesUpdatePayloadV2` 
     
 </dd>
 </dl>
@@ -4248,7 +4248,7 @@ await client.alertRoutesV2.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertRoutesV2DeleteRequest` 
+**request:** `IncidentIO.AlertRoutesV2DeleteRequest` 
     
 </dd>
 </dl>
@@ -4269,7 +4269,7 @@ await client.alertRoutesV2.delete({
 </details>
 
 ## Alert Sources V2
-<details><summary><code>client.alertSourcesV2.<a href="/src/api/resources/alertSourcesV2/client/Client.ts">list</a>() -> FernApi.AlertSourcesListResultV2</code></summary>
+<details><summary><code>client.alertSourcesV2.<a href="/src/api/resources/alertSourcesV2/client/Client.ts">list</a>() -> IncidentIO.AlertSourcesListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -4324,7 +4324,7 @@ await client.alertSourcesV2.list();
 </dl>
 </details>
 
-<details><summary><code>client.alertSourcesV2.<a href="/src/api/resources/alertSourcesV2/client/Client.ts">create</a>({ ...params }) -> FernApi.AlertSourcesCreateResultV2</code></summary>
+<details><summary><code>client.alertSourcesV2.<a href="/src/api/resources/alertSourcesV2/client/Client.ts">create</a>({ ...params }) -> IncidentIO.AlertSourcesCreateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -4497,7 +4497,7 @@ await client.alertSourcesV2.create({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertSourcesCreatePayloadV2` 
+**request:** `IncidentIO.AlertSourcesCreatePayloadV2` 
     
 </dd>
 </dl>
@@ -4517,7 +4517,7 @@ await client.alertSourcesV2.create({
 </dl>
 </details>
 
-<details><summary><code>client.alertSourcesV2.<a href="/src/api/resources/alertSourcesV2/client/Client.ts">show</a>({ ...params }) -> FernApi.AlertSourcesShowResultV2</code></summary>
+<details><summary><code>client.alertSourcesV2.<a href="/src/api/resources/alertSourcesV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.AlertSourcesShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -4562,7 +4562,7 @@ await client.alertSourcesV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertSourcesV2ShowRequest` 
+**request:** `IncidentIO.AlertSourcesV2ShowRequest` 
     
 </dd>
 </dl>
@@ -4582,7 +4582,7 @@ await client.alertSourcesV2.show({
 </dl>
 </details>
 
-<details><summary><code>client.alertSourcesV2.<a href="/src/api/resources/alertSourcesV2/client/Client.ts">update</a>({ ...params }) -> FernApi.AlertSourcesUpdateResultV2</code></summary>
+<details><summary><code>client.alertSourcesV2.<a href="/src/api/resources/alertSourcesV2/client/Client.ts">update</a>({ ...params }) -> IncidentIO.AlertSourcesUpdateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -4755,7 +4755,7 @@ await client.alertSourcesV2.update({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertSourcesUpdatePayloadV2` 
+**request:** `IncidentIO.AlertSourcesUpdatePayloadV2` 
     
 </dd>
 </dl>
@@ -4820,7 +4820,7 @@ await client.alertSourcesV2.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertSourcesV2DeleteRequest` 
+**request:** `IncidentIO.AlertSourcesV2DeleteRequest` 
     
 </dd>
 </dl>
@@ -4841,7 +4841,7 @@ await client.alertSourcesV2.delete({
 </details>
 
 ## Alerts V2
-<details><summary><code>client.alertsV2.<a href="/src/api/resources/alertsV2/client/Client.ts">list</a>({ ...params }) -> FernApi.AlertsListResultV2</code></summary>
+<details><summary><code>client.alertsV2.<a href="/src/api/resources/alertsV2/client/Client.ts">list</a>({ ...params }) -> IncidentIO.AlertsListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -4925,7 +4925,7 @@ await client.alertsV2.list({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertsV2ListRequest` 
+**request:** `IncidentIO.AlertsV2ListRequest` 
     
 </dd>
 </dl>
@@ -4945,7 +4945,7 @@ await client.alertsV2.list({
 </dl>
 </details>
 
-<details><summary><code>client.alertsV2.<a href="/src/api/resources/alertsV2/client/Client.ts">show</a>({ ...params }) -> FernApi.AlertsShowResultV2</code></summary>
+<details><summary><code>client.alertsV2.<a href="/src/api/resources/alertsV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.AlertsShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -4990,7 +4990,7 @@ await client.alertsV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertsV2ShowRequest` 
+**request:** `IncidentIO.AlertsV2ShowRequest` 
     
 </dd>
 </dl>
@@ -5010,7 +5010,7 @@ await client.alertsV2.show({
 </dl>
 </details>
 
-<details><summary><code>client.alertsV2.<a href="/src/api/resources/alertsV2/client/Client.ts">listincidentalerts</a>({ ...params }) -> FernApi.AlertsListIncidentAlertsResultV2</code></summary>
+<details><summary><code>client.alertsV2.<a href="/src/api/resources/alertsV2/client/Client.ts">listincidentalerts</a>({ ...params }) -> IncidentIO.AlertsListIncidentAlertsResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5058,7 +5058,7 @@ await client.alertsV2.listincidentalerts({
 <dl>
 <dd>
 
-**request:** `FernApi.AlertsV2ListIncidentAlertsRequest` 
+**request:** `IncidentIO.AlertsV2ListIncidentAlertsRequest` 
     
 </dd>
 </dl>
@@ -5079,7 +5079,7 @@ await client.alertsV2.listincidentalerts({
 </details>
 
 ## Catalog V2
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">listentries</a>({ ...params }) -> FernApi.CatalogListEntriesResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">listentries</a>({ ...params }) -> IncidentIO.CatalogListEntriesResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5126,7 +5126,7 @@ await client.catalogV2.listentries({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV2ListEntriesRequest` 
+**request:** `IncidentIO.CatalogV2ListEntriesRequest` 
     
 </dd>
 </dl>
@@ -5146,7 +5146,7 @@ await client.catalogV2.listentries({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">createentry</a>({ ...params }) -> FernApi.CatalogCreateEntryResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">createentry</a>({ ...params }) -> IncidentIO.CatalogCreateEntryResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5209,7 +5209,7 @@ await client.catalogV2.createentry({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogCreateEntryPayloadV2` 
+**request:** `IncidentIO.CatalogCreateEntryPayloadV2` 
     
 </dd>
 </dl>
@@ -5229,7 +5229,7 @@ await client.catalogV2.createentry({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">showentry</a>({ ...params }) -> FernApi.CatalogShowEntryResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">showentry</a>({ ...params }) -> IncidentIO.CatalogShowEntryResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5274,7 +5274,7 @@ await client.catalogV2.showentry({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV2ShowEntryRequest` 
+**request:** `IncidentIO.CatalogV2ShowEntryRequest` 
     
 </dd>
 </dl>
@@ -5294,7 +5294,7 @@ await client.catalogV2.showentry({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">updateentry</a>({ ...params }) -> FernApi.CatalogUpdateEntryResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">updateentry</a>({ ...params }) -> IncidentIO.CatalogUpdateEntryResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5355,7 +5355,7 @@ await client.catalogV2.updateentry({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogUpdateEntryPayloadV2` 
+**request:** `IncidentIO.CatalogUpdateEntryPayloadV2` 
     
 </dd>
 </dl>
@@ -5420,7 +5420,7 @@ await client.catalogV2.destroyentry({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV2DestroyEntryRequest` 
+**request:** `IncidentIO.CatalogV2DestroyEntryRequest` 
     
 </dd>
 </dl>
@@ -5440,7 +5440,7 @@ await client.catalogV2.destroyentry({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">listresources</a>() -> FernApi.CatalogListResourcesResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">listresources</a>() -> IncidentIO.CatalogListResourcesResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5499,7 +5499,7 @@ await client.catalogV2.listresources();
 </dl>
 </details>
 
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">listtypes</a>() -> FernApi.CatalogListTypesResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">listtypes</a>() -> IncidentIO.CatalogListTypesResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5554,7 +5554,7 @@ await client.catalogV2.listtypes();
 </dl>
 </details>
 
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">createtype</a>({ ...params }) -> FernApi.CatalogCreateTypeResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">createtype</a>({ ...params }) -> IncidentIO.CatalogCreateTypeResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5609,7 +5609,7 @@ await client.catalogV2.createtype({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogCreateTypePayloadV2` 
+**request:** `IncidentIO.CatalogCreateTypePayloadV2` 
     
 </dd>
 </dl>
@@ -5629,7 +5629,7 @@ await client.catalogV2.createtype({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">showtype</a>({ ...params }) -> FernApi.CatalogShowTypeResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">showtype</a>({ ...params }) -> IncidentIO.CatalogShowTypeResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5674,7 +5674,7 @@ await client.catalogV2.showtype({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV2ShowTypeRequest` 
+**request:** `IncidentIO.CatalogV2ShowTypeRequest` 
     
 </dd>
 </dl>
@@ -5694,7 +5694,7 @@ await client.catalogV2.showtype({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">updatetype</a>({ ...params }) -> FernApi.CatalogUpdateTypeResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">updatetype</a>({ ...params }) -> IncidentIO.CatalogUpdateTypeResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5749,7 +5749,7 @@ await client.catalogV2.updatetype({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogUpdateTypePayloadV2` 
+**request:** `IncidentIO.CatalogUpdateTypePayloadV2` 
     
 </dd>
 </dl>
@@ -5814,7 +5814,7 @@ await client.catalogV2.destroytype({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV2DestroyTypeRequest` 
+**request:** `IncidentIO.CatalogV2DestroyTypeRequest` 
     
 </dd>
 </dl>
@@ -5834,7 +5834,7 @@ await client.catalogV2.destroytype({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">updatetypeschema</a>({ ...params }) -> FernApi.CatalogUpdateTypeSchemaResultV2</code></summary>
+<details><summary><code>client.catalogV2.<a href="/src/api/resources/catalogV2/client/Client.ts">updatetypeschema</a>({ ...params }) -> IncidentIO.CatalogUpdateTypeSchemaResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5898,7 +5898,7 @@ await client.catalogV2.updatetypeschema({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogUpdateTypeSchemaPayloadV2` 
+**request:** `IncidentIO.CatalogUpdateTypeSchemaPayloadV2` 
     
 </dd>
 </dl>
@@ -5919,7 +5919,7 @@ await client.catalogV2.updatetypeschema({
 </details>
 
 ## Custom Fields V2
-<details><summary><code>client.customFieldsV2.<a href="/src/api/resources/customFieldsV2/client/Client.ts">list</a>() -> FernApi.CustomFieldsListResultV2</code></summary>
+<details><summary><code>client.customFieldsV2.<a href="/src/api/resources/customFieldsV2/client/Client.ts">list</a>() -> IncidentIO.CustomFieldsListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -5974,7 +5974,7 @@ await client.customFieldsV2.list();
 </dl>
 </details>
 
-<details><summary><code>client.customFieldsV2.<a href="/src/api/resources/customFieldsV2/client/Client.ts">create</a>({ ...params }) -> FernApi.CustomFieldsCreateResultV2</code></summary>
+<details><summary><code>client.customFieldsV2.<a href="/src/api/resources/customFieldsV2/client/Client.ts">create</a>({ ...params }) -> IncidentIO.CustomFieldsCreateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6028,7 +6028,7 @@ await client.customFieldsV2.create({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldsCreatePayloadV2` 
+**request:** `IncidentIO.CustomFieldsCreatePayloadV2` 
     
 </dd>
 </dl>
@@ -6048,7 +6048,7 @@ await client.customFieldsV2.create({
 </dl>
 </details>
 
-<details><summary><code>client.customFieldsV2.<a href="/src/api/resources/customFieldsV2/client/Client.ts">show</a>({ ...params }) -> FernApi.CustomFieldsShowResultV2</code></summary>
+<details><summary><code>client.customFieldsV2.<a href="/src/api/resources/customFieldsV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.CustomFieldsShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6093,7 +6093,7 @@ await client.customFieldsV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldsV2ShowRequest` 
+**request:** `IncidentIO.CustomFieldsV2ShowRequest` 
     
 </dd>
 </dl>
@@ -6113,7 +6113,7 @@ await client.customFieldsV2.show({
 </dl>
 </details>
 
-<details><summary><code>client.customFieldsV2.<a href="/src/api/resources/customFieldsV2/client/Client.ts">update</a>({ ...params }) -> FernApi.CustomFieldsUpdateResultV2</code></summary>
+<details><summary><code>client.customFieldsV2.<a href="/src/api/resources/customFieldsV2/client/Client.ts">update</a>({ ...params }) -> IncidentIO.CustomFieldsUpdateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6166,7 +6166,7 @@ await client.customFieldsV2.update({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldsUpdatePayloadV2` 
+**request:** `IncidentIO.CustomFieldsUpdatePayloadV2` 
     
 </dd>
 </dl>
@@ -6231,7 +6231,7 @@ await client.customFieldsV2.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.CustomFieldsV2DeleteRequest` 
+**request:** `IncidentIO.CustomFieldsV2DeleteRequest` 
     
 </dd>
 </dl>
@@ -6252,7 +6252,7 @@ await client.customFieldsV2.delete({
 </details>
 
 ## Escalations V2
-<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">createpath</a>({ ...params }) -> FernApi.EscalationsCreatePathResultV2</code></summary>
+<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">createpath</a>({ ...params }) -> IncidentIO.EscalationsCreatePathResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6368,7 +6368,7 @@ await client.escalationsV2.createpath({
 <dl>
 <dd>
 
-**request:** `FernApi.EscalationsCreatePathPayloadV2` 
+**request:** `IncidentIO.EscalationsCreatePathPayloadV2` 
     
 </dd>
 </dl>
@@ -6388,7 +6388,7 @@ await client.escalationsV2.createpath({
 </dl>
 </details>
 
-<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">showpath</a>({ ...params }) -> FernApi.EscalationsShowPathResultV2</code></summary>
+<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">showpath</a>({ ...params }) -> IncidentIO.EscalationsShowPathResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6436,7 +6436,7 @@ await client.escalationsV2.showpath({
 <dl>
 <dd>
 
-**request:** `FernApi.EscalationsV2ShowPathRequest` 
+**request:** `IncidentIO.EscalationsV2ShowPathRequest` 
     
 </dd>
 </dl>
@@ -6456,7 +6456,7 @@ await client.escalationsV2.showpath({
 </dl>
 </details>
 
-<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">updatepath</a>({ ...params }) -> FernApi.EscalationsUpdatePathResultV2</code></summary>
+<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">updatepath</a>({ ...params }) -> IncidentIO.EscalationsUpdatePathResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6569,7 +6569,7 @@ await client.escalationsV2.updatepath({
 <dl>
 <dd>
 
-**request:** `FernApi.EscalationsUpdatePathPayloadV2` 
+**request:** `IncidentIO.EscalationsUpdatePathPayloadV2` 
     
 </dd>
 </dl>
@@ -6637,7 +6637,7 @@ await client.escalationsV2.destroypath({
 <dl>
 <dd>
 
-**request:** `FernApi.EscalationsV2DestroyPathRequest` 
+**request:** `IncidentIO.EscalationsV2DestroyPathRequest` 
     
 </dd>
 </dl>
@@ -6657,7 +6657,7 @@ await client.escalationsV2.destroypath({
 </dl>
 </details>
 
-<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">list</a>({ ...params }) -> FernApi.EscalationsListResultV2</code></summary>
+<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">list</a>({ ...params }) -> IncidentIO.EscalationsListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6751,7 +6751,7 @@ await client.escalationsV2.list({
 <dl>
 <dd>
 
-**request:** `FernApi.EscalationsV2ListRequest` 
+**request:** `IncidentIO.EscalationsV2ListRequest` 
     
 </dd>
 </dl>
@@ -6771,7 +6771,7 @@ await client.escalationsV2.list({
 </dl>
 </details>
 
-<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">create</a>({ ...params }) -> FernApi.EscalationsCreateResultV2</code></summary>
+<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">create</a>({ ...params }) -> IncidentIO.EscalationsCreateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6835,7 +6835,7 @@ await client.escalationsV2.create({
 <dl>
 <dd>
 
-**request:** `FernApi.EscalationsCreatePayloadV2` 
+**request:** `IncidentIO.EscalationsCreatePayloadV2` 
     
 </dd>
 </dl>
@@ -6855,7 +6855,7 @@ await client.escalationsV2.create({
 </dl>
 </details>
 
-<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">show</a>({ ...params }) -> FernApi.EscalationsShowResultV2</code></summary>
+<details><summary><code>client.escalationsV2.<a href="/src/api/resources/escalationsV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.EscalationsShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6900,7 +6900,7 @@ await client.escalationsV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.EscalationsV2ShowRequest` 
+**request:** `IncidentIO.EscalationsV2ShowRequest` 
     
 </dd>
 </dl>
@@ -6921,7 +6921,7 @@ await client.escalationsV2.show({
 </details>
 
 ## Follow-ups V2
-<details><summary><code>client.followUpsV2.<a href="/src/api/resources/followUpsV2/client/Client.ts">list</a>({ ...params }) -> FernApi.FollowUpsListResultV2</code></summary>
+<details><summary><code>client.followUpsV2.<a href="/src/api/resources/followUpsV2/client/Client.ts">list</a>({ ...params }) -> IncidentIO.FollowUpsListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -6966,7 +6966,7 @@ await client.followUpsV2.list({
 <dl>
 <dd>
 
-**request:** `FernApi.FollowUpsV2ListRequest` 
+**request:** `IncidentIO.FollowUpsV2ListRequest` 
     
 </dd>
 </dl>
@@ -6986,7 +6986,7 @@ await client.followUpsV2.list({
 </dl>
 </details>
 
-<details><summary><code>client.followUpsV2.<a href="/src/api/resources/followUpsV2/client/Client.ts">show</a>({ ...params }) -> FernApi.FollowUpsShowResultV2</code></summary>
+<details><summary><code>client.followUpsV2.<a href="/src/api/resources/followUpsV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.FollowUpsShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7031,7 +7031,7 @@ await client.followUpsV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.FollowUpsV2ShowRequest` 
+**request:** `IncidentIO.FollowUpsV2ShowRequest` 
     
 </dd>
 </dl>
@@ -7052,7 +7052,7 @@ await client.followUpsV2.show({
 </details>
 
 ## Incident Roles V2
-<details><summary><code>client.incidentRolesV2.<a href="/src/api/resources/incidentRolesV2/client/Client.ts">list</a>() -> FernApi.IncidentRolesListResultV2</code></summary>
+<details><summary><code>client.incidentRolesV2.<a href="/src/api/resources/incidentRolesV2/client/Client.ts">list</a>() -> IncidentIO.IncidentRolesListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7107,7 +7107,7 @@ await client.incidentRolesV2.list();
 </dl>
 </details>
 
-<details><summary><code>client.incidentRolesV2.<a href="/src/api/resources/incidentRolesV2/client/Client.ts">create</a>({ ...params }) -> FernApi.IncidentRolesCreateResultV2</code></summary>
+<details><summary><code>client.incidentRolesV2.<a href="/src/api/resources/incidentRolesV2/client/Client.ts">create</a>({ ...params }) -> IncidentIO.IncidentRolesCreateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7155,7 +7155,7 @@ await client.incidentRolesV2.create({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentRolesCreatePayloadV2` 
+**request:** `IncidentIO.IncidentRolesCreatePayloadV2` 
     
 </dd>
 </dl>
@@ -7175,7 +7175,7 @@ await client.incidentRolesV2.create({
 </dl>
 </details>
 
-<details><summary><code>client.incidentRolesV2.<a href="/src/api/resources/incidentRolesV2/client/Client.ts">show</a>({ ...params }) -> FernApi.IncidentRolesShowResultV2</code></summary>
+<details><summary><code>client.incidentRolesV2.<a href="/src/api/resources/incidentRolesV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.IncidentRolesShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7220,7 +7220,7 @@ await client.incidentRolesV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentRolesV2ShowRequest` 
+**request:** `IncidentIO.IncidentRolesV2ShowRequest` 
     
 </dd>
 </dl>
@@ -7240,7 +7240,7 @@ await client.incidentRolesV2.show({
 </dl>
 </details>
 
-<details><summary><code>client.incidentRolesV2.<a href="/src/api/resources/incidentRolesV2/client/Client.ts">update</a>({ ...params }) -> FernApi.IncidentRolesUpdateResultV2</code></summary>
+<details><summary><code>client.incidentRolesV2.<a href="/src/api/resources/incidentRolesV2/client/Client.ts">update</a>({ ...params }) -> IncidentIO.IncidentRolesUpdateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7289,7 +7289,7 @@ await client.incidentRolesV2.update({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentRolesUpdatePayloadV2` 
+**request:** `IncidentIO.IncidentRolesUpdatePayloadV2` 
     
 </dd>
 </dl>
@@ -7354,7 +7354,7 @@ await client.incidentRolesV2.delete({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentRolesV2DeleteRequest` 
+**request:** `IncidentIO.IncidentRolesV2DeleteRequest` 
     
 </dd>
 </dl>
@@ -7375,7 +7375,7 @@ await client.incidentRolesV2.delete({
 </details>
 
 ## Incident Timestamps V2
-<details><summary><code>client.incidentTimestampsV2.<a href="/src/api/resources/incidentTimestampsV2/client/Client.ts">list</a>() -> FernApi.IncidentTimestampsListResultV2</code></summary>
+<details><summary><code>client.incidentTimestampsV2.<a href="/src/api/resources/incidentTimestampsV2/client/Client.ts">list</a>() -> IncidentIO.IncidentTimestampsListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7430,7 +7430,7 @@ await client.incidentTimestampsV2.list();
 </dl>
 </details>
 
-<details><summary><code>client.incidentTimestampsV2.<a href="/src/api/resources/incidentTimestampsV2/client/Client.ts">show</a>({ ...params }) -> FernApi.IncidentTimestampsShowResultV2</code></summary>
+<details><summary><code>client.incidentTimestampsV2.<a href="/src/api/resources/incidentTimestampsV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.IncidentTimestampsShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7475,7 +7475,7 @@ await client.incidentTimestampsV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentTimestampsV2ShowRequest` 
+**request:** `IncidentIO.IncidentTimestampsV2ShowRequest` 
     
 </dd>
 </dl>
@@ -7496,7 +7496,7 @@ await client.incidentTimestampsV2.show({
 </details>
 
 ## Incident Updates V2
-<details><summary><code>client.incidentUpdatesV2.<a href="/src/api/resources/incidentUpdatesV2/client/Client.ts">list</a>({ ...params }) -> FernApi.IncidentUpdatesListResultV2</code></summary>
+<details><summary><code>client.incidentUpdatesV2.<a href="/src/api/resources/incidentUpdatesV2/client/Client.ts">list</a>({ ...params }) -> IncidentIO.IncidentUpdatesListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7543,7 +7543,7 @@ await client.incidentUpdatesV2.list({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentUpdatesV2ListRequest` 
+**request:** `IncidentIO.IncidentUpdatesV2ListRequest` 
     
 </dd>
 </dl>
@@ -7564,7 +7564,7 @@ await client.incidentUpdatesV2.list({
 </details>
 
 ## Incidents V2
-<details><summary><code>client.incidentsV2.<a href="/src/api/resources/incidentsV2/client/Client.ts">list</a>({ ...params }) -> FernApi.IncidentsListResultV2</code></summary>
+<details><summary><code>client.incidentsV2.<a href="/src/api/resources/incidentsV2/client/Client.ts">list</a>({ ...params }) -> IncidentIO.IncidentsListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7748,7 +7748,7 @@ await client.incidentsV2.list({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentsV2ListRequest` 
+**request:** `IncidentIO.IncidentsV2ListRequest` 
     
 </dd>
 </dl>
@@ -7768,7 +7768,7 @@ await client.incidentsV2.list({
 </dl>
 </details>
 
-<details><summary><code>client.incidentsV2.<a href="/src/api/resources/incidentsV2/client/Client.ts">create</a>({ ...params }) -> FernApi.IncidentsCreateResultV2</code></summary>
+<details><summary><code>client.incidentsV2.<a href="/src/api/resources/incidentsV2/client/Client.ts">create</a>({ ...params }) -> IncidentIO.IncidentsCreateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7854,7 +7854,7 @@ await client.incidentsV2.create({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentsCreatePayloadV2` 
+**request:** `IncidentIO.IncidentsCreatePayloadV2` 
     
 </dd>
 </dl>
@@ -7874,7 +7874,7 @@ await client.incidentsV2.create({
 </dl>
 </details>
 
-<details><summary><code>client.incidentsV2.<a href="/src/api/resources/incidentsV2/client/Client.ts">show</a>({ ...params }) -> FernApi.IncidentsShowResultV2</code></summary>
+<details><summary><code>client.incidentsV2.<a href="/src/api/resources/incidentsV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.IncidentsShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -7925,7 +7925,7 @@ await client.incidentsV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentsV2ShowRequest` 
+**request:** `IncidentIO.IncidentsV2ShowRequest` 
     
 </dd>
 </dl>
@@ -7945,7 +7945,7 @@ await client.incidentsV2.show({
 </dl>
 </details>
 
-<details><summary><code>client.incidentsV2.<a href="/src/api/resources/incidentsV2/client/Client.ts">edit</a>({ ...params }) -> FernApi.IncidentsEditResultV2</code></summary>
+<details><summary><code>client.incidentsV2.<a href="/src/api/resources/incidentsV2/client/Client.ts">edit</a>({ ...params }) -> IncidentIO.IncidentsEditResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8028,7 +8028,7 @@ await client.incidentsV2.edit({
 <dl>
 <dd>
 
-**request:** `FernApi.IncidentsEditPayloadV2` 
+**request:** `IncidentIO.IncidentsEditPayloadV2` 
     
 </dd>
 </dl>
@@ -8049,7 +8049,7 @@ await client.incidentsV2.edit({
 </details>
 
 ## Schedules V2
-<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">listscheduleentries</a>({ ...params }) -> FernApi.SchedulesListScheduleEntriesResultV2</code></summary>
+<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">listscheduleentries</a>({ ...params }) -> IncidentIO.SchedulesListScheduleEntriesResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8096,7 +8096,7 @@ await client.schedulesV2.listscheduleentries({
 <dl>
 <dd>
 
-**request:** `FernApi.SchedulesV2ListScheduleEntriesRequest` 
+**request:** `IncidentIO.SchedulesV2ListScheduleEntriesRequest` 
     
 </dd>
 </dl>
@@ -8116,7 +8116,7 @@ await client.schedulesV2.listscheduleentries({
 </dl>
 </details>
 
-<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">createoverride</a>({ ...params }) -> FernApi.SchedulesCreateOverrideResultV2</code></summary>
+<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">createoverride</a>({ ...params }) -> IncidentIO.SchedulesCreateOverrideResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8170,7 +8170,7 @@ await client.schedulesV2.createoverride({
 <dl>
 <dd>
 
-**request:** `FernApi.SchedulesCreateOverridePayloadV2` 
+**request:** `IncidentIO.SchedulesCreateOverridePayloadV2` 
     
 </dd>
 </dl>
@@ -8190,7 +8190,7 @@ await client.schedulesV2.createoverride({
 </dl>
 </details>
 
-<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">list</a>({ ...params }) -> FernApi.SchedulesListResultV2</code></summary>
+<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">list</a>({ ...params }) -> IncidentIO.SchedulesListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8236,7 +8236,7 @@ await client.schedulesV2.list({
 <dl>
 <dd>
 
-**request:** `FernApi.SchedulesV2ListRequest` 
+**request:** `IncidentIO.SchedulesV2ListRequest` 
     
 </dd>
 </dl>
@@ -8256,7 +8256,7 @@ await client.schedulesV2.list({
 </dl>
 </details>
 
-<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">create</a>({ ...params }) -> FernApi.SchedulesCreateResultV2</code></summary>
+<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">create</a>({ ...params }) -> IncidentIO.SchedulesCreateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8338,7 +8338,7 @@ await client.schedulesV2.create({
 <dl>
 <dd>
 
-**request:** `FernApi.SchedulesCreatePayloadV2` 
+**request:** `IncidentIO.SchedulesCreatePayloadV2` 
     
 </dd>
 </dl>
@@ -8358,7 +8358,7 @@ await client.schedulesV2.create({
 </dl>
 </details>
 
-<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">show</a>({ ...params }) -> FernApi.SchedulesShowResultV2</code></summary>
+<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.SchedulesShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8403,7 +8403,7 @@ await client.schedulesV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.SchedulesV2ShowRequest` 
+**request:** `IncidentIO.SchedulesV2ShowRequest` 
     
 </dd>
 </dl>
@@ -8423,7 +8423,7 @@ await client.schedulesV2.show({
 </dl>
 </details>
 
-<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">update</a>({ ...params }) -> FernApi.SchedulesUpdateResultV2</code></summary>
+<details><summary><code>client.schedulesV2.<a href="/src/api/resources/schedulesV2/client/Client.ts">update</a>({ ...params }) -> IncidentIO.SchedulesUpdateResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8506,7 +8506,7 @@ await client.schedulesV2.update({
 <dl>
 <dd>
 
-**request:** `FernApi.SchedulesUpdatePayloadV2` 
+**request:** `IncidentIO.SchedulesUpdatePayloadV2` 
     
 </dd>
 </dl>
@@ -8571,7 +8571,7 @@ await client.schedulesV2.destroy({
 <dl>
 <dd>
 
-**request:** `FernApi.SchedulesV2DestroyRequest` 
+**request:** `IncidentIO.SchedulesV2DestroyRequest` 
     
 </dd>
 </dl>
@@ -8592,7 +8592,7 @@ await client.schedulesV2.destroy({
 </details>
 
 ## Users V2
-<details><summary><code>client.usersV2.<a href="/src/api/resources/usersV2/client/Client.ts">list</a>({ ...params }) -> FernApi.UsersListResultV2</code></summary>
+<details><summary><code>client.usersV2.<a href="/src/api/resources/usersV2/client/Client.ts">list</a>({ ...params }) -> IncidentIO.UsersListResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8640,7 +8640,7 @@ await client.usersV2.list({
 <dl>
 <dd>
 
-**request:** `FernApi.UsersV2ListRequest` 
+**request:** `IncidentIO.UsersV2ListRequest` 
     
 </dd>
 </dl>
@@ -8660,7 +8660,7 @@ await client.usersV2.list({
 </dl>
 </details>
 
-<details><summary><code>client.usersV2.<a href="/src/api/resources/usersV2/client/Client.ts">show</a>({ ...params }) -> FernApi.UsersShowResultV2</code></summary>
+<details><summary><code>client.usersV2.<a href="/src/api/resources/usersV2/client/Client.ts">show</a>({ ...params }) -> IncidentIO.UsersShowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8705,7 +8705,7 @@ await client.usersV2.show({
 <dl>
 <dd>
 
-**request:** `FernApi.UsersV2ShowRequest` 
+**request:** `IncidentIO.UsersV2ShowRequest` 
     
 </dd>
 </dl>
@@ -8726,7 +8726,7 @@ await client.usersV2.show({
 </details>
 
 ## Workflows V2
-<details><summary><code>client.workflowsV2.<a href="/src/api/resources/workflowsV2/client/Client.ts">listworkflows</a>() -> FernApi.WorkflowsListWorkflowsResultV2</code></summary>
+<details><summary><code>client.workflowsV2.<a href="/src/api/resources/workflowsV2/client/Client.ts">listworkflows</a>() -> IncidentIO.WorkflowsListWorkflowsResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8781,7 +8781,7 @@ await client.workflowsV2.listworkflows();
 </dl>
 </details>
 
-<details><summary><code>client.workflowsV2.<a href="/src/api/resources/workflowsV2/client/Client.ts">createworkflow</a>({ ...params }) -> FernApi.WorkflowsCreateWorkflowResultV2</code></summary>
+<details><summary><code>client.workflowsV2.<a href="/src/api/resources/workflowsV2/client/Client.ts">createworkflow</a>({ ...params }) -> IncidentIO.WorkflowsCreateWorkflowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -8959,7 +8959,7 @@ await client.workflowsV2.createworkflow({
 <dl>
 <dd>
 
-**request:** `FernApi.WorkflowsCreateWorkflowPayloadV2` 
+**request:** `IncidentIO.WorkflowsCreateWorkflowPayloadV2` 
     
 </dd>
 </dl>
@@ -8979,7 +8979,7 @@ await client.workflowsV2.createworkflow({
 </dl>
 </details>
 
-<details><summary><code>client.workflowsV2.<a href="/src/api/resources/workflowsV2/client/Client.ts">showworkflow</a>({ ...params }) -> FernApi.WorkflowsShowWorkflowResultV2</code></summary>
+<details><summary><code>client.workflowsV2.<a href="/src/api/resources/workflowsV2/client/Client.ts">showworkflow</a>({ ...params }) -> IncidentIO.WorkflowsShowWorkflowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -9025,7 +9025,7 @@ await client.workflowsV2.showworkflow({
 <dl>
 <dd>
 
-**request:** `FernApi.WorkflowsV2ShowWorkflowRequest` 
+**request:** `IncidentIO.WorkflowsV2ShowWorkflowRequest` 
     
 </dd>
 </dl>
@@ -9045,7 +9045,7 @@ await client.workflowsV2.showworkflow({
 </dl>
 </details>
 
-<details><summary><code>client.workflowsV2.<a href="/src/api/resources/workflowsV2/client/Client.ts">updateworkflow</a>({ ...params }) -> FernApi.WorkflowsUpdateWorkflowResultV2</code></summary>
+<details><summary><code>client.workflowsV2.<a href="/src/api/resources/workflowsV2/client/Client.ts">updateworkflow</a>({ ...params }) -> IncidentIO.WorkflowsUpdateWorkflowResultV2</code></summary>
 <dl>
 <dd>
 
@@ -9223,7 +9223,7 @@ await client.workflowsV2.updateworkflow({
 <dl>
 <dd>
 
-**request:** `FernApi.WorkflowsUpdateWorkflowPayloadV2` 
+**request:** `IncidentIO.WorkflowsUpdateWorkflowPayloadV2` 
     
 </dd>
 </dl>
@@ -9288,7 +9288,7 @@ await client.workflowsV2.destroyworkflow({
 <dl>
 <dd>
 
-**request:** `FernApi.WorkflowsV2DestroyWorkflowRequest` 
+**request:** `IncidentIO.WorkflowsV2DestroyWorkflowRequest` 
     
 </dd>
 </dl>
@@ -9309,7 +9309,7 @@ await client.workflowsV2.destroyworkflow({
 </details>
 
 ## Catalog V3
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">listentries</a>({ ...params }) -> FernApi.CatalogListEntriesResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">listentries</a>({ ...params }) -> IncidentIO.CatalogListEntriesResultV3</code></summary>
 <dl>
 <dd>
 
@@ -9357,7 +9357,7 @@ await client.catalogV3.listentries({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV3ListEntriesRequest` 
+**request:** `IncidentIO.CatalogV3ListEntriesRequest` 
     
 </dd>
 </dl>
@@ -9377,7 +9377,7 @@ await client.catalogV3.listentries({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">createentry</a>({ ...params }) -> FernApi.CatalogCreateEntryResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">createentry</a>({ ...params }) -> IncidentIO.CatalogCreateEntryResultV3</code></summary>
 <dl>
 <dd>
 
@@ -9438,7 +9438,7 @@ await client.catalogV3.createentry({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogCreateEntryPayloadV3` 
+**request:** `IncidentIO.CatalogCreateEntryPayloadV3` 
     
 </dd>
 </dl>
@@ -9537,7 +9537,7 @@ await client.catalogV3.bulkupdateentries({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogBulkUpdateEntriesPayloadV3` 
+**request:** `IncidentIO.CatalogBulkUpdateEntriesPayloadV3` 
     
 </dd>
 </dl>
@@ -9557,7 +9557,7 @@ await client.catalogV3.bulkupdateentries({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">showentry</a>({ ...params }) -> FernApi.CatalogShowEntryResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">showentry</a>({ ...params }) -> IncidentIO.CatalogShowEntryResultV3</code></summary>
 <dl>
 <dd>
 
@@ -9602,7 +9602,7 @@ await client.catalogV3.showentry({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV3ShowEntryRequest` 
+**request:** `IncidentIO.CatalogV3ShowEntryRequest` 
     
 </dd>
 </dl>
@@ -9622,7 +9622,7 @@ await client.catalogV3.showentry({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">updateentry</a>({ ...params }) -> FernApi.CatalogUpdateEntryResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">updateentry</a>({ ...params }) -> IncidentIO.CatalogUpdateEntryResultV3</code></summary>
 <dl>
 <dd>
 
@@ -9682,7 +9682,7 @@ await client.catalogV3.updateentry({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogUpdateEntryPayloadV3` 
+**request:** `IncidentIO.CatalogUpdateEntryPayloadV3` 
     
 </dd>
 </dl>
@@ -9747,7 +9747,7 @@ await client.catalogV3.destroyentry({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV3DestroyEntryRequest` 
+**request:** `IncidentIO.CatalogV3DestroyEntryRequest` 
     
 </dd>
 </dl>
@@ -9767,7 +9767,7 @@ await client.catalogV3.destroyentry({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">listresources</a>() -> FernApi.CatalogListResourcesResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">listresources</a>() -> IncidentIO.CatalogListResourcesResultV3</code></summary>
 <dl>
 <dd>
 
@@ -9826,7 +9826,7 @@ await client.catalogV3.listresources();
 </dl>
 </details>
 
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">listtypes</a>() -> FernApi.CatalogListTypesResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">listtypes</a>() -> IncidentIO.CatalogListTypesResultV3</code></summary>
 <dl>
 <dd>
 
@@ -9881,7 +9881,7 @@ await client.catalogV3.listtypes();
 </dl>
 </details>
 
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">createtype</a>({ ...params }) -> FernApi.CatalogCreateTypeResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">createtype</a>({ ...params }) -> IncidentIO.CatalogCreateTypeResultV3</code></summary>
 <dl>
 <dd>
 
@@ -9937,7 +9937,7 @@ await client.catalogV3.createtype({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogCreateTypePayloadV3` 
+**request:** `IncidentIO.CatalogCreateTypePayloadV3` 
     
 </dd>
 </dl>
@@ -9957,7 +9957,7 @@ await client.catalogV3.createtype({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">showtype</a>({ ...params }) -> FernApi.CatalogShowTypeResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">showtype</a>({ ...params }) -> IncidentIO.CatalogShowTypeResultV3</code></summary>
 <dl>
 <dd>
 
@@ -10002,7 +10002,7 @@ await client.catalogV3.showtype({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV3ShowTypeRequest` 
+**request:** `IncidentIO.CatalogV3ShowTypeRequest` 
     
 </dd>
 </dl>
@@ -10022,7 +10022,7 @@ await client.catalogV3.showtype({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">updatetype</a>({ ...params }) -> FernApi.CatalogUpdateTypeResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">updatetype</a>({ ...params }) -> IncidentIO.CatalogUpdateTypeResultV3</code></summary>
 <dl>
 <dd>
 
@@ -10078,7 +10078,7 @@ await client.catalogV3.updatetype({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogUpdateTypePayloadV3` 
+**request:** `IncidentIO.CatalogUpdateTypePayloadV3` 
     
 </dd>
 </dl>
@@ -10143,7 +10143,7 @@ await client.catalogV3.destroytype({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogV3DestroyTypeRequest` 
+**request:** `IncidentIO.CatalogV3DestroyTypeRequest` 
     
 </dd>
 </dl>
@@ -10163,7 +10163,7 @@ await client.catalogV3.destroytype({
 </dl>
 </details>
 
-<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">updatetypeschema</a>({ ...params }) -> FernApi.CatalogUpdateTypeSchemaResultV3</code></summary>
+<details><summary><code>client.catalogV3.<a href="/src/api/resources/catalogV3/client/Client.ts">updatetypeschema</a>({ ...params }) -> IncidentIO.CatalogUpdateTypeSchemaResultV3</code></summary>
 <dl>
 <dd>
 
@@ -10227,7 +10227,7 @@ await client.catalogV3.updatetypeschema({
 <dl>
 <dd>
 
-**request:** `FernApi.CatalogUpdateTypeSchemaPayloadV3` 
+**request:** `IncidentIO.CatalogUpdateTypeSchemaPayloadV3` 
     
 </dd>
 </dl>

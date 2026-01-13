@@ -8,7 +8,7 @@ import { toJson } from "../../../../core/json.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace IncidentsV2Client {
     export type Options = BaseClientOptions;
@@ -172,7 +172,7 @@ export class IncidentsV2Client {
      * 			--get 'https://api.incident.io/v2/incidents' \
      * 			--data 'custom_field[ABC][not_in]=XYZ'
      *
-     * @param {FernApi.IncidentsV2ListRequest} request
+     * @param {IncidentIO.IncidentsV2ListRequest} request
      * @param {IncidentsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -182,16 +182,16 @@ export class IncidentsV2Client {
      *     })
      */
     public list(
-        request: FernApi.IncidentsV2ListRequest = {},
+        request: IncidentIO.IncidentsV2ListRequest = {},
         requestOptions?: IncidentsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentsListResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentsListResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__list(request, requestOptions));
     }
 
     private async __list(
-        request: FernApi.IncidentsV2ListRequest = {},
+        request: IncidentIO.IncidentsV2ListRequest = {},
         requestOptions?: IncidentsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentsListResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentsListResultV2>> {
         const {
             page_size: pageSize,
             after,
@@ -225,7 +225,7 @@ export class IncidentsV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/incidents",
             ),
             method: "GET",
@@ -238,11 +238,11 @@ export class IncidentsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentsListResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.IncidentsListResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -258,7 +258,7 @@ export class IncidentsV2Client {
      * Note that if the incident mode is set to "retrospective" then the new incident
      * will not be announced in Slack.
      *
-     * @param {FernApi.IncidentsCreatePayloadV2} request
+     * @param {IncidentIO.IncidentsCreatePayloadV2} request
      * @param {IncidentsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -305,22 +305,22 @@ export class IncidentsV2Client {
      *     })
      */
     public create(
-        request: FernApi.IncidentsCreatePayloadV2,
+        request: IncidentIO.IncidentsCreatePayloadV2,
         requestOptions?: IncidentsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentsCreateResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentsCreateResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__create(request, requestOptions));
     }
 
     private async __create(
-        request: FernApi.IncidentsCreatePayloadV2,
+        request: IncidentIO.IncidentsCreatePayloadV2,
         requestOptions?: IncidentsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentsCreateResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentsCreateResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/incidents",
             ),
             method: "POST",
@@ -336,11 +336,11 @@ export class IncidentsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentsCreateResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.IncidentsCreateResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -359,7 +359,7 @@ export class IncidentsV2Client {
      * 		curl \
      * 			--get 'https://api.incident.io/v2/incidents/123
      *
-     * @param {FernApi.IncidentsV2ShowRequest} request
+     * @param {IncidentIO.IncidentsV2ShowRequest} request
      * @param {IncidentsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -368,23 +368,23 @@ export class IncidentsV2Client {
      *     })
      */
     public show(
-        request: FernApi.IncidentsV2ShowRequest,
+        request: IncidentIO.IncidentsV2ShowRequest,
         requestOptions?: IncidentsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentsShowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentsShowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.IncidentsV2ShowRequest,
+        request: IncidentIO.IncidentsV2ShowRequest,
         requestOptions?: IncidentsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentsShowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentsShowResultV2>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/incidents/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -397,11 +397,11 @@ export class IncidentsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentsShowResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.IncidentsShowResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -419,7 +419,7 @@ export class IncidentsV2Client {
      * When using this endpoint, only fields that are provided will be edited (omitted fields
      * will be ignored).
      *
-     * @param {FernApi.IncidentsEditPayloadV2} request
+     * @param {IncidentIO.IncidentsEditPayloadV2} request
      * @param {IncidentsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -461,23 +461,23 @@ export class IncidentsV2Client {
      *     })
      */
     public edit(
-        request: FernApi.IncidentsEditPayloadV2,
+        request: IncidentIO.IncidentsEditPayloadV2,
         requestOptions?: IncidentsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentsEditResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentsEditResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__edit(request, requestOptions));
     }
 
     private async __edit(
-        request: FernApi.IncidentsEditPayloadV2,
+        request: IncidentIO.IncidentsEditPayloadV2,
         requestOptions?: IncidentsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentsEditResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentsEditResultV2>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/incidents/${core.url.encodePathParam(id)}/actions/edit`,
             ),
             method: "POST",
@@ -493,11 +493,11 @@ export class IncidentsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentsEditResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.IncidentsEditResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

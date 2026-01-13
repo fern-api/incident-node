@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace UsersV2Client {
     export type Options = BaseClientOptions;
@@ -30,7 +30,7 @@ export class UsersV2Client {
     /**
      * List users in your account.
      *
-     * @param {FernApi.UsersV2ListRequest} request
+     * @param {IncidentIO.UsersV2ListRequest} request
      * @param {UsersV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -42,16 +42,16 @@ export class UsersV2Client {
      *     })
      */
     public list(
-        request: FernApi.UsersV2ListRequest = {},
+        request: IncidentIO.UsersV2ListRequest = {},
         requestOptions?: UsersV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.UsersListResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.UsersListResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__list(request, requestOptions));
     }
 
     private async __list(
-        request: FernApi.UsersV2ListRequest = {},
+        request: IncidentIO.UsersV2ListRequest = {},
         requestOptions?: UsersV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.UsersListResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.UsersListResultV2>> {
         const { email, slack_user_id: slackUserId, page_size: pageSize, after } = request;
         const _queryParams: Record<string, unknown> = {
             email,
@@ -64,7 +64,7 @@ export class UsersV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/users",
             ),
             method: "GET",
@@ -77,11 +77,11 @@ export class UsersV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.UsersListResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.UsersListResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -94,7 +94,7 @@ export class UsersV2Client {
     /**
      * Get a single user.
      *
-     * @param {FernApi.UsersV2ShowRequest} request
+     * @param {IncidentIO.UsersV2ShowRequest} request
      * @param {UsersV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -103,23 +103,23 @@ export class UsersV2Client {
      *     })
      */
     public show(
-        request: FernApi.UsersV2ShowRequest,
+        request: IncidentIO.UsersV2ShowRequest,
         requestOptions?: UsersV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.UsersShowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.UsersShowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.UsersV2ShowRequest,
+        request: IncidentIO.UsersV2ShowRequest,
         requestOptions?: UsersV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.UsersShowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.UsersShowResultV2>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/users/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -132,11 +132,11 @@ export class UsersV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.UsersShowResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.UsersShowResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

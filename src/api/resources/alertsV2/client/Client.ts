@@ -8,7 +8,7 @@ import { toJson } from "../../../../core/json.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace AlertsV2Client {
     export type Options = BaseClientOptions;
@@ -74,7 +74,7 @@ export class AlertsV2Client {
      * 			--data 'created_at[date_range]=2024-12-02~2024-12-08'
      *
      *
-     * @param {FernApi.AlertsV2ListRequest} request
+     * @param {IncidentIO.AlertsV2ListRequest} request
      * @param {AlertsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -84,16 +84,16 @@ export class AlertsV2Client {
      *     })
      */
     public list(
-        request: FernApi.AlertsV2ListRequest,
+        request: IncidentIO.AlertsV2ListRequest,
         requestOptions?: AlertsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.AlertsListResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.AlertsListResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__list(request, requestOptions));
     }
 
     private async __list(
-        request: FernApi.AlertsV2ListRequest,
+        request: IncidentIO.AlertsV2ListRequest,
         requestOptions?: AlertsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.AlertsListResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.AlertsListResultV2>> {
         const {
             page_size: pageSize,
             after,
@@ -113,7 +113,7 @@ export class AlertsV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/alerts",
             ),
             method: "GET",
@@ -126,11 +126,11 @@ export class AlertsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.AlertsListResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.AlertsListResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -143,7 +143,7 @@ export class AlertsV2Client {
     /**
      * Show a single alert for your account
      *
-     * @param {FernApi.AlertsV2ShowRequest} request
+     * @param {IncidentIO.AlertsV2ShowRequest} request
      * @param {AlertsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -152,23 +152,23 @@ export class AlertsV2Client {
      *     })
      */
     public show(
-        request: FernApi.AlertsV2ShowRequest,
+        request: IncidentIO.AlertsV2ShowRequest,
         requestOptions?: AlertsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.AlertsShowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.AlertsShowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.AlertsV2ShowRequest,
+        request: IncidentIO.AlertsV2ShowRequest,
         requestOptions?: AlertsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.AlertsShowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.AlertsShowResultV2>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/alerts/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -181,11 +181,11 @@ export class AlertsV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.AlertsShowResultV2, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.AlertsShowResultV2, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -198,7 +198,7 @@ export class AlertsV2Client {
     /**
      * List the connections between incidents and alerts
      *
-     * @param {FernApi.AlertsV2ListIncidentAlertsRequest} request
+     * @param {IncidentIO.AlertsV2ListIncidentAlertsRequest} request
      * @param {AlertsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -210,16 +210,16 @@ export class AlertsV2Client {
      *     })
      */
     public listincidentalerts(
-        request: FernApi.AlertsV2ListIncidentAlertsRequest,
+        request: IncidentIO.AlertsV2ListIncidentAlertsRequest,
         requestOptions?: AlertsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.AlertsListIncidentAlertsResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.AlertsListIncidentAlertsResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__listincidentalerts(request, requestOptions));
     }
 
     private async __listincidentalerts(
-        request: FernApi.AlertsV2ListIncidentAlertsRequest,
+        request: IncidentIO.AlertsV2ListIncidentAlertsRequest,
         requestOptions?: AlertsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.AlertsListIncidentAlertsResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.AlertsListIncidentAlertsResultV2>> {
         const { page_size: pageSize, after, alert_id: alertId, incident_id: incidentId } = request;
         const _queryParams: Record<string, unknown> = {
             page_size: pageSize,
@@ -232,7 +232,7 @@ export class AlertsV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/incident_alerts",
             ),
             method: "GET",
@@ -246,13 +246,13 @@ export class AlertsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.AlertsListIncidentAlertsResultV2,
+                data: _response.body as IncidentIO.AlertsListIncidentAlertsResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

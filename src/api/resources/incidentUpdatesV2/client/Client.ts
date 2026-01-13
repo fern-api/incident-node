@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace IncidentUpdatesV2Client {
     export type Options = BaseClientOptions;
@@ -32,7 +32,7 @@ export class IncidentUpdatesV2Client {
     /**
      * List all incident updates for an organisation, or for a specific incident.
      *
-     * @param {FernApi.IncidentUpdatesV2ListRequest} request
+     * @param {IncidentIO.IncidentUpdatesV2ListRequest} request
      * @param {IncidentUpdatesV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -43,16 +43,16 @@ export class IncidentUpdatesV2Client {
      *     })
      */
     public list(
-        request: FernApi.IncidentUpdatesV2ListRequest = {},
+        request: IncidentIO.IncidentUpdatesV2ListRequest = {},
         requestOptions?: IncidentUpdatesV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentUpdatesListResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentUpdatesListResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__list(request, requestOptions));
     }
 
     private async __list(
-        request: FernApi.IncidentUpdatesV2ListRequest = {},
+        request: IncidentIO.IncidentUpdatesV2ListRequest = {},
         requestOptions?: IncidentUpdatesV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentUpdatesListResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentUpdatesListResultV2>> {
         const { incident_id: incidentId, page_size: pageSize, after } = request;
         const _queryParams: Record<string, unknown> = {
             incident_id: incidentId,
@@ -64,7 +64,7 @@ export class IncidentUpdatesV2Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/incident_updates",
             ),
             method: "GET",
@@ -77,11 +77,14 @@ export class IncidentUpdatesV2Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentUpdatesListResultV2, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.IncidentUpdatesListResultV2,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

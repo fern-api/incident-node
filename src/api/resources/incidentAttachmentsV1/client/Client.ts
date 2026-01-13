@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace IncidentAttachmentsV1Client {
     export type Options = BaseClientOptions;
@@ -31,7 +31,7 @@ export class IncidentAttachmentsV1Client {
     /**
      * List all incident attachments for a given external resource or incident. You must provide either a specific incident ID or a specific external resource type and external ID.
      *
-     * @param {FernApi.IncidentAttachmentsV1ListRequest} request
+     * @param {IncidentIO.IncidentAttachmentsV1ListRequest} request
      * @param {IncidentAttachmentsV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -41,16 +41,16 @@ export class IncidentAttachmentsV1Client {
      *     })
      */
     public list(
-        request: FernApi.IncidentAttachmentsV1ListRequest = {},
+        request: IncidentIO.IncidentAttachmentsV1ListRequest = {},
         requestOptions?: IncidentAttachmentsV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentAttachmentsListResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentAttachmentsListResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__list(request, requestOptions));
     }
 
     private async __list(
-        request: FernApi.IncidentAttachmentsV1ListRequest = {},
+        request: IncidentIO.IncidentAttachmentsV1ListRequest = {},
         requestOptions?: IncidentAttachmentsV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentAttachmentsListResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentAttachmentsListResultV1>> {
         const { incident_id: incidentId, external_id: externalId, resource_type: resourceType } = request;
         const _queryParams: Record<string, unknown> = {
             incident_id: incidentId,
@@ -62,7 +62,7 @@ export class IncidentAttachmentsV1Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/incident_attachments",
             ),
             method: "GET",
@@ -76,13 +76,13 @@ export class IncidentAttachmentsV1Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.IncidentAttachmentsListResultV1,
+                data: _response.body as IncidentIO.IncidentAttachmentsListResultV1,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -95,7 +95,7 @@ export class IncidentAttachmentsV1Client {
     /**
      * Attaches an external resource to an incident
      *
-     * @param {FernApi.IncidentAttachmentsCreatePayloadV1} request
+     * @param {IncidentIO.IncidentAttachmentsCreatePayloadV1} request
      * @param {IncidentAttachmentsV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -108,22 +108,22 @@ export class IncidentAttachmentsV1Client {
      *     })
      */
     public create(
-        request: FernApi.IncidentAttachmentsCreatePayloadV1,
+        request: IncidentIO.IncidentAttachmentsCreatePayloadV1,
         requestOptions?: IncidentAttachmentsV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentAttachmentsCreateResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentAttachmentsCreateResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__create(request, requestOptions));
     }
 
     private async __create(
-        request: FernApi.IncidentAttachmentsCreatePayloadV1,
+        request: IncidentIO.IncidentAttachmentsCreatePayloadV1,
         requestOptions?: IncidentAttachmentsV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentAttachmentsCreateResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentAttachmentsCreateResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/incident_attachments",
             ),
             method: "POST",
@@ -140,13 +140,13 @@ export class IncidentAttachmentsV1Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.IncidentAttachmentsCreateResultV1,
+                data: _response.body as IncidentIO.IncidentAttachmentsCreateResultV1,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -159,7 +159,7 @@ export class IncidentAttachmentsV1Client {
     /**
      * Unattaches an external resource from an incident
      *
-     * @param {FernApi.IncidentAttachmentsV1DeleteRequest} request
+     * @param {IncidentIO.IncidentAttachmentsV1DeleteRequest} request
      * @param {IncidentAttachmentsV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -168,14 +168,14 @@ export class IncidentAttachmentsV1Client {
      *     })
      */
     public delete(
-        request: FernApi.IncidentAttachmentsV1DeleteRequest,
+        request: IncidentIO.IncidentAttachmentsV1DeleteRequest,
         requestOptions?: IncidentAttachmentsV1Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__delete(request, requestOptions));
     }
 
     private async __delete(
-        request: FernApi.IncidentAttachmentsV1DeleteRequest,
+        request: IncidentIO.IncidentAttachmentsV1DeleteRequest,
         requestOptions?: IncidentAttachmentsV1Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -184,7 +184,7 @@ export class IncidentAttachmentsV1Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/incident_attachments/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -201,7 +201,7 @@ export class IncidentAttachmentsV1Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

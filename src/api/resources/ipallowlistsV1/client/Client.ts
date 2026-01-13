@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace IpallowlistsV1Client {
     export type Options = BaseClientOptions;
@@ -37,19 +37,19 @@ export class IpallowlistsV1Client {
      */
     public showipallowlist(
         requestOptions?: IpallowlistsV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IpAllowlistsShowIpAllowlistResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IpAllowlistsShowIpAllowlistResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__showipallowlist(requestOptions));
     }
 
     private async __showipallowlist(
         requestOptions?: IpallowlistsV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IpAllowlistsShowIpAllowlistResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IpAllowlistsShowIpAllowlistResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/ip_allowlists",
             ),
             method: "GET",
@@ -63,13 +63,13 @@ export class IpallowlistsV1Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.IpAllowlistsShowIpAllowlistResultV1,
+                data: _response.body as IncidentIO.IpAllowlistsShowIpAllowlistResultV1,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -82,7 +82,7 @@ export class IpallowlistsV1Client {
     /**
      * Update the IP allowlist for your organisation
      *
-     * @param {FernApi.IpAllowlistsUpdateIpAllowlistPayloadV1} request
+     * @param {IncidentIO.IpAllowlistsUpdateIpAllowlistPayloadV1} request
      * @param {IpallowlistsV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -96,22 +96,22 @@ export class IpallowlistsV1Client {
      *     })
      */
     public updateipallowlist(
-        request: FernApi.IpAllowlistsUpdateIpAllowlistPayloadV1,
+        request: IncidentIO.IpAllowlistsUpdateIpAllowlistPayloadV1,
         requestOptions?: IpallowlistsV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IpAllowlistsUpdateIpAllowlistResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IpAllowlistsUpdateIpAllowlistResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__updateipallowlist(request, requestOptions));
     }
 
     private async __updateipallowlist(
-        request: FernApi.IpAllowlistsUpdateIpAllowlistPayloadV1,
+        request: IncidentIO.IpAllowlistsUpdateIpAllowlistPayloadV1,
         requestOptions?: IpallowlistsV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IpAllowlistsUpdateIpAllowlistResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IpAllowlistsUpdateIpAllowlistResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/ip_allowlists",
             ),
             method: "PUT",
@@ -128,13 +128,13 @@ export class IpallowlistsV1Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.IpAllowlistsUpdateIpAllowlistResultV1,
+                data: _response.body as IncidentIO.IpAllowlistsUpdateIpAllowlistResultV1,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace IncidentTimestampsV2Client {
     export type Options = BaseClientOptions;
@@ -42,19 +42,19 @@ export class IncidentTimestampsV2Client {
      */
     public list(
         requestOptions?: IncidentTimestampsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentTimestampsListResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentTimestampsListResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__list(requestOptions));
     }
 
     private async __list(
         requestOptions?: IncidentTimestampsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentTimestampsListResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentTimestampsListResultV2>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v2/incident_timestamps",
             ),
             method: "GET",
@@ -68,13 +68,13 @@ export class IncidentTimestampsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.IncidentTimestampsListResultV2,
+                data: _response.body as IncidentIO.IncidentTimestampsListResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -87,7 +87,7 @@ export class IncidentTimestampsV2Client {
     /**
      * Get a single incident timestamp.
      *
-     * @param {FernApi.IncidentTimestampsV2ShowRequest} request
+     * @param {IncidentIO.IncidentTimestampsV2ShowRequest} request
      * @param {IncidentTimestampsV2Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -96,23 +96,23 @@ export class IncidentTimestampsV2Client {
      *     })
      */
     public show(
-        request: FernApi.IncidentTimestampsV2ShowRequest,
+        request: IncidentIO.IncidentTimestampsV2ShowRequest,
         requestOptions?: IncidentTimestampsV2Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentTimestampsShowResultV2> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentTimestampsShowResultV2> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.IncidentTimestampsV2ShowRequest,
+        request: IncidentIO.IncidentTimestampsV2ShowRequest,
         requestOptions?: IncidentTimestampsV2Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentTimestampsShowResultV2>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentTimestampsShowResultV2>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v2/incident_timestamps/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -126,13 +126,13 @@ export class IncidentTimestampsV2Client {
         });
         if (_response.ok) {
             return {
-                data: _response.body as FernApi.IncidentTimestampsShowResultV2,
+                data: _response.body as IncidentIO.IncidentTimestampsShowResultV2,
                 rawResponse: _response.rawResponse,
             };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

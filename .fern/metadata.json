@@ -2,5 +2,8 @@
     "cliVersion": "3.39.2",
     "generatorName": "fernapi/fern-typescript-sdk",
     "generatorVersion": "3.43.9",
-    "sdkVersion": "1.0.0"
+    "generatorConfig": {
+        "namespaceExport": "IncidentIO"
+    },
+    "sdkVersion": "1.0.1"
 }

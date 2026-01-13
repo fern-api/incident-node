@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace SeveritiesV1Client {
     export type Options = BaseClientOptions;
@@ -42,19 +42,19 @@ export class SeveritiesV1Client {
      */
     public list(
         requestOptions?: SeveritiesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SeveritiesListResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.SeveritiesListResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__list(requestOptions));
     }
 
     private async __list(
         requestOptions?: SeveritiesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SeveritiesListResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SeveritiesListResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/severities",
             ),
             method: "GET",
@@ -67,11 +67,11 @@ export class SeveritiesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.SeveritiesListResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.SeveritiesListResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -84,7 +84,7 @@ export class SeveritiesV1Client {
     /**
      * Create a new severity
      *
-     * @param {FernApi.SeveritiesCreatePayloadV1} request
+     * @param {IncidentIO.SeveritiesCreatePayloadV1} request
      * @param {SeveritiesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -95,22 +95,22 @@ export class SeveritiesV1Client {
      *     })
      */
     public create(
-        request: FernApi.SeveritiesCreatePayloadV1,
+        request: IncidentIO.SeveritiesCreatePayloadV1,
         requestOptions?: SeveritiesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SeveritiesCreateResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.SeveritiesCreateResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__create(request, requestOptions));
     }
 
     private async __create(
-        request: FernApi.SeveritiesCreatePayloadV1,
+        request: IncidentIO.SeveritiesCreatePayloadV1,
         requestOptions?: SeveritiesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SeveritiesCreateResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SeveritiesCreateResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/severities",
             ),
             method: "POST",
@@ -126,11 +126,11 @@ export class SeveritiesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.SeveritiesCreateResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.SeveritiesCreateResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -143,7 +143,7 @@ export class SeveritiesV1Client {
     /**
      * Get a single incident severity.
      *
-     * @param {FernApi.SeveritiesV1ShowRequest} request
+     * @param {IncidentIO.SeveritiesV1ShowRequest} request
      * @param {SeveritiesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -152,23 +152,23 @@ export class SeveritiesV1Client {
      *     })
      */
     public show(
-        request: FernApi.SeveritiesV1ShowRequest,
+        request: IncidentIO.SeveritiesV1ShowRequest,
         requestOptions?: SeveritiesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SeveritiesShowResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.SeveritiesShowResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.SeveritiesV1ShowRequest,
+        request: IncidentIO.SeveritiesV1ShowRequest,
         requestOptions?: SeveritiesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SeveritiesShowResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SeveritiesShowResultV1>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/severities/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -181,11 +181,11 @@ export class SeveritiesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.SeveritiesShowResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.SeveritiesShowResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -198,7 +198,7 @@ export class SeveritiesV1Client {
     /**
      * Update an existing severity
      *
-     * @param {FernApi.SeveritiesUpdatePayloadV1} request
+     * @param {IncidentIO.SeveritiesUpdatePayloadV1} request
      * @param {SeveritiesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -210,23 +210,23 @@ export class SeveritiesV1Client {
      *     })
      */
     public update(
-        request: FernApi.SeveritiesUpdatePayloadV1,
+        request: IncidentIO.SeveritiesUpdatePayloadV1,
         requestOptions?: SeveritiesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.SeveritiesUpdateResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.SeveritiesUpdateResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__update(request, requestOptions));
     }
 
     private async __update(
-        request: FernApi.SeveritiesUpdatePayloadV1,
+        request: IncidentIO.SeveritiesUpdatePayloadV1,
         requestOptions?: SeveritiesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.SeveritiesUpdateResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.SeveritiesUpdateResultV1>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/severities/${core.url.encodePathParam(id)}`,
             ),
             method: "PUT",
@@ -242,11 +242,11 @@ export class SeveritiesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.SeveritiesUpdateResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.SeveritiesUpdateResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -259,7 +259,7 @@ export class SeveritiesV1Client {
     /**
      * Delete a severity
      *
-     * @param {FernApi.SeveritiesV1DeleteRequest} request
+     * @param {IncidentIO.SeveritiesV1DeleteRequest} request
      * @param {SeveritiesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -268,14 +268,14 @@ export class SeveritiesV1Client {
      *     })
      */
     public delete(
-        request: FernApi.SeveritiesV1DeleteRequest,
+        request: IncidentIO.SeveritiesV1DeleteRequest,
         requestOptions?: SeveritiesV1Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__delete(request, requestOptions));
     }
 
     private async __delete(
-        request: FernApi.SeveritiesV1DeleteRequest,
+        request: IncidentIO.SeveritiesV1DeleteRequest,
         requestOptions?: SeveritiesV1Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -284,7 +284,7 @@ export class SeveritiesV1Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/severities/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -301,7 +301,7 @@ export class SeveritiesV1Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

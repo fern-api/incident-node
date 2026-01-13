@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace UtilitiesV1Client {
     export type Options = BaseClientOptions;
@@ -37,19 +37,19 @@ export class UtilitiesV1Client {
      */
     public identity(
         requestOptions?: UtilitiesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.UtilitiesIdentityResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.UtilitiesIdentityResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__identity(requestOptions));
     }
 
     private async __identity(
         requestOptions?: UtilitiesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.UtilitiesIdentityResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.UtilitiesIdentityResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/identity",
             ),
             method: "GET",
@@ -62,11 +62,11 @@ export class UtilitiesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.UtilitiesIdentityResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.UtilitiesIdentityResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -93,7 +93,7 @@ export class UtilitiesV1Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/openapi.json",
             ),
             method: "GET",
@@ -111,7 +111,7 @@ export class UtilitiesV1Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -136,7 +136,7 @@ export class UtilitiesV1Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/openapiV3.json",
             ),
             method: "GET",
@@ -154,7 +154,7 @@ export class UtilitiesV1Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,

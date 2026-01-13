@@ -7,7 +7,7 @@ import * as core from "../../../../core/index.js";
 import * as environments from "../../../../environments.js";
 import { handleNonStatusCodeError } from "../../../../errors/handleNonStatusCodeError.js";
 import * as errors from "../../../../errors/index.js";
-import type * as FernApi from "../../../index.js";
+import type * as IncidentIO from "../../../index.js";
 
 export declare namespace IncidentRolesV1Client {
     export type Options = BaseClientOptions;
@@ -41,19 +41,19 @@ export class IncidentRolesV1Client {
      */
     public list(
         requestOptions?: IncidentRolesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentRolesListResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentRolesListResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__list(requestOptions));
     }
 
     private async __list(
         requestOptions?: IncidentRolesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentRolesListResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentRolesListResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/incident_roles",
             ),
             method: "GET",
@@ -66,11 +66,11 @@ export class IncidentRolesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentRolesListResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.IncidentRolesListResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -83,7 +83,7 @@ export class IncidentRolesV1Client {
     /**
      * Create a new incident role
      *
-     * @param {FernApi.IncidentRolesCreatePayloadV1} request
+     * @param {IncidentIO.IncidentRolesCreatePayloadV1} request
      * @param {IncidentRolesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -96,22 +96,22 @@ export class IncidentRolesV1Client {
      *     })
      */
     public create(
-        request: FernApi.IncidentRolesCreatePayloadV1,
+        request: IncidentIO.IncidentRolesCreatePayloadV1,
         requestOptions?: IncidentRolesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentRolesCreateResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentRolesCreateResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__create(request, requestOptions));
     }
 
     private async __create(
-        request: FernApi.IncidentRolesCreatePayloadV1,
+        request: IncidentIO.IncidentRolesCreatePayloadV1,
         requestOptions?: IncidentRolesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentRolesCreateResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentRolesCreateResultV1>> {
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 "v1/incident_roles",
             ),
             method: "POST",
@@ -127,11 +127,14 @@ export class IncidentRolesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentRolesCreateResultV1, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.IncidentRolesCreateResultV1,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -144,7 +147,7 @@ export class IncidentRolesV1Client {
     /**
      * Get a single incident role.
      *
-     * @param {FernApi.IncidentRolesV1ShowRequest} request
+     * @param {IncidentIO.IncidentRolesV1ShowRequest} request
      * @param {IncidentRolesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -153,23 +156,23 @@ export class IncidentRolesV1Client {
      *     })
      */
     public show(
-        request: FernApi.IncidentRolesV1ShowRequest,
+        request: IncidentIO.IncidentRolesV1ShowRequest,
         requestOptions?: IncidentRolesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentRolesShowResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentRolesShowResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__show(request, requestOptions));
     }
 
     private async __show(
-        request: FernApi.IncidentRolesV1ShowRequest,
+        request: IncidentIO.IncidentRolesV1ShowRequest,
         requestOptions?: IncidentRolesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentRolesShowResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentRolesShowResultV1>> {
         const { id } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/incident_roles/${core.url.encodePathParam(id)}`,
             ),
             method: "GET",
@@ -182,11 +185,11 @@ export class IncidentRolesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentRolesShowResultV1, rawResponse: _response.rawResponse };
+            return { data: _response.body as IncidentIO.IncidentRolesShowResultV1, rawResponse: _response.rawResponse };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -199,7 +202,7 @@ export class IncidentRolesV1Client {
     /**
      * Update an existing incident role
      *
-     * @param {FernApi.IncidentRolesUpdatePayloadV1} request
+     * @param {IncidentIO.IncidentRolesUpdatePayloadV1} request
      * @param {IncidentRolesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -213,23 +216,23 @@ export class IncidentRolesV1Client {
      *     })
      */
     public update(
-        request: FernApi.IncidentRolesUpdatePayloadV1,
+        request: IncidentIO.IncidentRolesUpdatePayloadV1,
         requestOptions?: IncidentRolesV1Client.RequestOptions,
-    ): core.HttpResponsePromise<FernApi.IncidentRolesUpdateResultV1> {
+    ): core.HttpResponsePromise<IncidentIO.IncidentRolesUpdateResultV1> {
         return core.HttpResponsePromise.fromPromise(this.__update(request, requestOptions));
     }
 
     private async __update(
-        request: FernApi.IncidentRolesUpdatePayloadV1,
+        request: IncidentIO.IncidentRolesUpdatePayloadV1,
         requestOptions?: IncidentRolesV1Client.RequestOptions,
-    ): Promise<core.WithRawResponse<FernApi.IncidentRolesUpdateResultV1>> {
+    ): Promise<core.WithRawResponse<IncidentIO.IncidentRolesUpdateResultV1>> {
         const { id, ..._body } = request;
         const _headers: core.Fetcher.Args["headers"] = mergeHeaders(this._options?.headers, requestOptions?.headers);
         const _response = await core.fetcher({
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/incident_roles/${core.url.encodePathParam(id)}`,
             ),
             method: "PUT",
@@ -245,11 +248,14 @@ export class IncidentRolesV1Client {
             logging: this._options.logging,
         });
         if (_response.ok) {
-            return { data: _response.body as FernApi.IncidentRolesUpdateResultV1, rawResponse: _response.rawResponse };
+            return {
+                data: _response.body as IncidentIO.IncidentRolesUpdateResultV1,
+                rawResponse: _response.rawResponse,
+            };
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
@@ -262,7 +268,7 @@ export class IncidentRolesV1Client {
     /**
      * Removes an existing role
      *
-     * @param {FernApi.IncidentRolesV1DeleteRequest} request
+     * @param {IncidentIO.IncidentRolesV1DeleteRequest} request
      * @param {IncidentRolesV1Client.RequestOptions} requestOptions - Request-specific configuration.
      *
      * @example
@@ -271,14 +277,14 @@ export class IncidentRolesV1Client {
      *     })
      */
     public delete(
-        request: FernApi.IncidentRolesV1DeleteRequest,
+        request: IncidentIO.IncidentRolesV1DeleteRequest,
         requestOptions?: IncidentRolesV1Client.RequestOptions,
     ): core.HttpResponsePromise<void> {
         return core.HttpResponsePromise.fromPromise(this.__delete(request, requestOptions));
     }
 
     private async __delete(
-        request: FernApi.IncidentRolesV1DeleteRequest,
+        request: IncidentIO.IncidentRolesV1DeleteRequest,
         requestOptions?: IncidentRolesV1Client.RequestOptions,
     ): Promise<core.WithRawResponse<void>> {
         const { id } = request;
@@ -287,7 +293,7 @@ export class IncidentRolesV1Client {
             url: core.url.join(
                 (await core.Supplier.get(this._options.baseUrl)) ??
                     (await core.Supplier.get(this._options.environment)) ??
-                    environments.FernApiEnvironment.Default,
+                    environments.IncidentIOEnvironment.Default,
                 `v1/incident_roles/${core.url.encodePathParam(id)}`,
             ),
             method: "DELETE",
@@ -304,7 +310,7 @@ export class IncidentRolesV1Client {
         }
 
         if (_response.error.reason === "status-code") {
-            throw new errors.FernApiError({
+            throw new errors.IncidentIOError({
                 statusCode: _response.error.statusCode,
                 body: _response.error.body,
                 rawResponse: _response.rawResponse,
