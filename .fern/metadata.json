@@ -5,5 +5,5 @@
     "generatorConfig": {
         "namespaceExport": "IncidentIO"
     },
-    "sdkVersion": "1.0.1"
+    "sdkVersion": "1.0.2"
 }
