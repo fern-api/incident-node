@@ -45,12 +45,17 @@ jobs:
     needs: [ compile, test ]
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
 
       - name: Set up node
         uses: actions/setup-node@v6
+        with:
+          registry-url: https://registry.npmjs.org
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -63,16 +68,10 @@ jobs:
 
       - name: Publish to npm
         run: |
-          npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-          publish() {  # use latest npm to ensure OIDC support
-            npx -y npm@latest publish "$@"
-          }
           if [[ ${GITHUB_REF} == *alpha* ]]; then
-            publish --access public --tag alpha
+            npm publish --access public --tag alpha --provenance
           elif [[ ${GITHUB_REF} == *beta* ]]; then
-            publish --access public --tag beta
+            npm publish --access public --tag beta --provenance
           else
-            publish --access public
+            npm publish --access public --provenance
           fi
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
